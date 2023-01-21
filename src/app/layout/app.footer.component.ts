@@ -6,5 +6,6 @@ import { LayoutService } from "./service/app.layout.service";
     templateUrl: './app.footer.component.html'
 })
 export class AppFooterComponent {
+    fecha: Date = new Date();
     constructor(public layoutService: LayoutService) { }
 }

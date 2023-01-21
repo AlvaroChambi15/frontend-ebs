@@ -1,0 +1,502 @@
+<app-chargin *ngIf="chargin"></app-chargin>
+
+<app-header></app-header>
+
+<!-- <p>reserva works!</p> -->
+
+
+<div class="row justify-content-center" id="fondo">
+  <div class="container col-lg-9" id="fondoFormulario">
+
+    <div class="row text-center pb-4">
+
+      <h1 for="" style="color: rgb(240 255 0); border: 1px solid;border-radius: 100px;padding: 15px 0 5px 0;"><b><svg
+            xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-emoji-smile"
+            viewBox="0 0 20 20">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path
+              d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z" />
+          </svg>Solicita tu Cita!</b></h1>
+      <label for="" class="mt-5" style="font-size: 30px; color:white;"><b>Atendemos de Lunes a Sábado de 3pm a
+          9pm</b></label>
+      <label for="" class="mt-3" style="font-size: 17px; font-weight: bold; color: yellow;">
+        Completa el siguiente formulario y nos
+        comunicaremos contigo para
+        reservar tu
+        cita!</label>
+    </div>
+
+    <!-- <div id="cardSteps" class="card card-steps">
+
+      <div class="contentSteps">
+        <div class="step step1">
+
+          <div>
+            <a href="">
+              <div><span>1</span></div> 
+              <div><span>Personal</span></div>
+            </a>
+          </div>
+
+          <div class="lineBack"></div>
+
+        </div>
+        <div class="step step2">
+          <a href="">
+            <span>1</span>
+            <span>Contacto</span>
+          </a>
+          <div class="lineBack"></div>
+
+        </div>
+        <div class="step step3">
+          <a href="">
+            <span>1</span>
+            <span>Reserva</span>
+          </a>
+          <div class="lineBack"></div>
+
+        </div>
+        <div class="step step4">
+          <a href="">
+            <span>1</span>
+            <span>Confirmación</span>
+          </a>
+          <div class="lineBack"></div>
+
+        </div>
+      </div>
+
+    </div>
+ -->
+
+    <div class="card cardTitle" style="margin:0 10px 20px 10px;">
+      <!-- <p-toast></p-toast> -->
+      <p-steps [model]="items" styleClass="stepsNumbers" [readonly]="true" [activeIndex]="authService.stepSoliIndex">
+      </p-steps>
+    </div>
+
+    <div [formGroup]="solicitudForm">
+
+      <p-card styleClass="cardStepDatos" *ngIf="authService.stepSoliIndex == 0">
+        <ng-template pTemplate="title">
+          <i class="pi pi-user" style="font-size: 2rem; margin-right:10px;"></i> Datos Personales
+        </ng-template>
+        <ng-template pTemplate="subtitle">
+          Ingrese su información personal
+        </ng-template>
+        <div>
+          <div class="field">
+            <label for="firstname">Nombres</label>
+            <!-- <input type="text" id="firstname" formControlName="nombres" pInputText> -->
+            <input type="text" id="firstname" formControlName="nombres" [pKeyFilter]="letrasEspacio" pInputText>
+            <!-- <small class="p-error" *ngIf="campoValidando('nombres')">El nombre es requerido.</small> -->
+            <small class="p-error" *ngIf="campoValidando('nombres')">El nombre es
+              requerido.</small>
+          </div>
+          <div class="field">
+            <label for="lastname">Apellidos</label>
+            <input type="text" id="lastname" formControlName="apellidos" [pKeyFilter]="letrasEspacio" pInputText>
+            <small class="p-error" *ngIf="campoValidando('apellidos')">Los apellidos son requeridos.</small>
+          </div>
+          <div class="field">
+            <label for="age">Edad</label>
+            <input id="age" formControlName="edad" type="number" min="0" max="160" pInputText>
+            <small class="p-error" *ngIf="campoValidando('edad')">La edad es requerida.</small>
+          </div>
+        </div>
+        <ng-template pTemplate="footer">
+          <div class="buttonFooter">
+            <p-button label="Siguiente" icon="pi pi-angle-right" iconPos="right" (onClick)="nextCard(0)"></p-button>
+          </div>
+        </ng-template>
+      </p-card>
+
+      <p-card styleClass="cardStepsContact" *ngIf="authService.stepSoliIndex == 1">
+        <ng-template pTemplate="title">
+          <i class="pi pi-phone" style="font-size: 2rem; margin-right:10px;"></i> Datos de Contacto
+        </ng-template>
+        <ng-template pTemplate="subtitle">
+          Ingrese sus datos para que nos contactemos con usted
+        </ng-template>
+        <div>
+
+          <div class="field">
+            <div><i class="pi pi-envelope" style="margin-right: 10px;"></i> <label for="email">Correo (opcional)</label>
+            </div>
+            <input id="email" formControlName="email" type="email" pInputText>
+            <small class="p-error" *ngIf="campoValidando('email')">El correo es requerido y debe ser válido.</small>
+          </div>
+          <div class="field">
+            <div><i class="pi pi-tablet" style="margin-right: 10px;"></i> <label for="celular">Celular</label></div>
+            <!-- <label for="celular">Celular</label> -->
+            <!-- <input id="celular" type="number" pInputText> -->
+            <input type="text" id="celular" maxlength="8" styleClass="txtCelular" formControlName="celular"
+              [pKeyFilter]="celular" [pValidateOnly]="true" pInputText>
+
+            <!-- <input id="celular" styleClass="txtCelular" formControlName="celular" [pKeyFilter]="celular" pInputText> -->
+
+            <!-- <p-inputMask styleClass="txtCelular" formControlName="celular" mask="99-aa" characterPattern="[А-Яа-я]">
+            </p-inputMask> -->
+
+            <small class="p-error" *ngIf="campoValidando('celular')">El celular es requerido y debe ser válido.</small>
+          </div>
+
+          <div class="field">
+            <div class="tipoContactoTitle"><label>¿Como pregieres que te contactemos?</label></div>
+            <div class="tipoContacts">
+              <div class="field-checkbox">
+                <!-- <p-checkbox name="group1" formControlName="contactTelefono" value="true" inputId="tel"></p-checkbox> -->
+                <p-checkbox formControlName="contactTelefono" [binary]="true" inputId="tel"></p-checkbox>
+                <label for="tel">LLamada Telefónica</label>
+              </div>
+              <div class="field-checkbox">
+                <!-- <p-checkbox name="group2" formControlName="contactWsp" value="true" inputId="wsp"></p-checkbox> -->
+                <p-checkbox formControlName="contactWsp" [binary]="true" inputId="wsp"></p-checkbox>
+                <label for="wsp">Whatsapp</label>
+              </div>
+              <div class="field-checkbox">
+                <!-- <p-checkbox name="group3" formControlName="contactEmail" value="true" inputId="em"></p-checkbox> -->
+                <p-checkbox formControlName="contactEmail" [binary]="true" inputId="em"></p-checkbox>
+                <label for="em">Correo Electrónico</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ng-template pTemplate="footer">
+          <div class="buttonFooterContacto">
+            <p-button label="Anterior" icon="pi pi-angle-left" (onClick)="backCard(1)"></p-button>
+            <!-- <p-button label="Next" icon="pi pi-angle-right" iconPos="right"></p-button> -->
+            <p-button label="Siguiente" icon="pi pi-angle-right" iconPos="right" (onClick)="nextCard(1)"></p-button>
+          </div>
+        </ng-template>
+      </p-card>
+
+      <!-- <p-dropdown inputId="class" [options]="tratamientos" optionLabel="name" placeholder="Select a Class">
+      </p-dropdown>
+ -->
+      <p-card styleClass="cardStepsCita" *ngIf="authService.stepSoliIndex == 2">
+        <ng-template pTemplate="title">
+          <i class="pi pi-calendar" style="font-size: 2rem; margin-right:10px;"></i> Datos de Solicitud
+        </ng-template>
+        <ng-template pTemplate="subtitle">
+          Ingrese los datos de solicitud para la cita
+        </ng-template>
+        <div class="field">
+          <div><i class="pi pi-list" style="margin-right: 10px;"></i> <label for="fecha">Tratamiento</label></div>
+          <!-- <input id="fecha" type="fecha" pInputText> -->
+          <p-dropdown [options]="tratamientos" formControlName="tratamiento" placeholder="Seleccione un tratamiento"
+            optionLabel="name" scrollHeight="330px" [showClear]="true">
+          </p-dropdown>
+          <!-- <p-dropdown inputId="class" [options]="tratamientos" optionLabel="name" placeholder="Select a Class">
+          </p-dropdown> -->
+          <small class="p-error" *ngIf="campoValidando('tratamiento')">El tratamiento es requerido.</small>
+        </div>
+        <div class="solicitudDates">
+          <div class="field">
+            <div><i class="pi pi-calendar-plus" style="margin-right: 10px;"></i> <label for="fecha">Fecha</label></div>
+            <!-- <input id="fecha" type="fecha" pInputText> -->
+            <!-- <p-calendar formControlName="fecha" [minDate]="minDate" [maxDate]="maxDate" [readonlyInput]="true"
+              inputId="min-max"></p-calendar> -->
+            <p-calendar formControlName="fecha" [disabledDays]="[0]" [touchUI]="true" [minDate]="manana"
+              dateFormat="mm-dd-yy" [readonlyInput]="true" inputId="touchui" styleClass="txtFecha"></p-calendar>
+            <small class="p-error" *ngIf="campoValidando('fecha')">La fecha es requerida.</small>
+          </div>
+          <div class="field">
+            <div><i class="pi pi-clock" style="margin-right: 10px;"></i> <label for="hora">Hora</label></div>
+            <!-- <input id="hora" type="number" pInputText> -->
+            <!-- <input pInputText type="date" name="fecha_cita" min="15/11/2022"> -->
+
+            <!-- <input pInputText type="time" formControlName="hora" name="hora_cita" class="form-control"
+              placeholder="Hora" min="15:00" max="21:00"> -->
+
+            <p-calendar [baseZIndex]="10" formControlName="hora" [timeOnly]="true" [showTime]="true" hourFormat="24"
+              inputId="timeonly" styleClass="txtHora" aria-valuenow="" [stepMinute]="10">
+            </p-calendar>
+
+            <!-- <input pInputText type="time" name="hora_cita" placeholder="Hora" min="15:00" max="21:00"> -->
+            <small class="p-error" *ngIf="campoValidando('hora')">El hora es requerida.</small>
+          </div>
+        </div>
+        <ng-template pTemplate="footer">
+          <div class="buttonFooterContacto">
+            <p-button label="Anterior" icon="pi pi-angle-left" (onClick)="backCard(2)"></p-button>
+            <!-- <p-button label="Next" icon="pi pi-angle-right" iconPos="right"></p-button> -->
+            <!-- <button pButton label="Siguiente" icon="pi pi-angle-right" iconPos="right" (onClick)="nextCard(2)"></button> -->
+            <p-button type="submit" label="Siguiente" icon="pi pi-angle-right" iconPos="right" (onClick)="nextCard(2)">
+            </p-button>
+          </div>
+        </ng-template>
+      </p-card>
+
+      <p-card styleClass="cardStepsConfirm" *ngIf="authService.stepSoliIndex == 3">
+
+        <ng-template pTemplate="title">
+          <i class="pi pi-check" style="font-size: 2rem; margin-right:10px;"></i> Confirmación
+        </ng-template>
+
+        <ng-template pTemplate="subtitle">
+          Confirma todos tus datos para que la solicitud sea enviada y nos contactemos con usted
+        </ng-template>
+
+        <div>
+
+
+          <div class="nomAp">
+
+            <!-- <div class="field">
+              <label for="firstname">Nombres</label>
+              <b>{{ solicitudForm.value.nombres }}</b>
+            </div>
+
+            <div class="field">
+              <label for="lastname">Apellidos</label>
+              <b>{{ solicitudForm.value.apellidos }}</b>
+            </div> -->
+
+            <div class="field">
+              <label for="lastname">Nombres</label>
+              <b>{{ solicitudForm.value.nombres }} {{ solicitudForm.value.apellidos }}</b>
+            </div>
+
+
+            <div class="field">
+              <label for="age">Edad</label>
+              <b>{{ solicitudForm.value.edad }}</b>
+            </div>
+
+          </div>
+
+          <div class="emailCel">
+            <div class="field">
+              <div><i class="pi pi-envelope" style="margin-right: 10px;"></i> <label for="email">Correo</label></div>
+              <b>{{ solicitudForm.value.email }}</b>
+              <b *ngIf="solicitudForm.value.email === null">-</b>
+              <!-- <b *ngIf="solicitudForm.value.email !== '' ">-</b> -->
+
+            </div>
+            <div class="field">
+              <div><i class="pi pi-tablet" style="margin-right: 10px;"></i> <label for="celular">Celular</label></div>
+              <b>{{ solicitudForm.value.celular }}</b>
+            </div>
+          </div>
+
+
+          <div class="field">
+            <div><label>Forma de Contacto</label></div>
+
+
+
+            <b>
+              <span *ngIf="solicitudForm.value.contactTelefono == true" style="margin-right: 40px">Llamada
+                Telefónica</span>
+              <span *ngIf="solicitudForm.value.contactWsp == true" style="margin-right: 40px">Whatsapp</span>
+              <span *ngIf="solicitudForm.value.contactEmail == true" style="margin-right: 40px">Correo
+                Electrónico</span>
+            </b>
+
+          </div>
+
+          <p-divider></p-divider>
+
+          <div class="field">
+            <div><i class="pi pi-list" style="margin-right: 10px;"></i> <label for="fecha">Tratamiento</label></div>
+            <b *ngIf="(solicitudForm.value.tratamiento.name).length > 0">{{ solicitudForm.value.tratamiento.name }}</b>
+          </div>
+
+          <div class="fechaHora">
+            <div class="field">
+              <div><i class="pi pi-calendar-plus" style="margin-right: 10px;"></i> <label for="fecha">Fecha</label>
+              </div>
+              <b>{{ solicitudForm.value.fecha | date:'shortDate' }}</b>
+            </div>
+            <div class="field">
+              <div><i class="pi pi-clock" style="margin-right: 10px;"></i> <label for="hora">Hora</label></div>
+
+              <b *ngIf="(solicitudForm.value.hora).length == 5 ">{{ solicitudForm.value.hora }}</b>
+              <b *ngIf="(solicitudForm.value.hora).length !== 5 ">{{ solicitudForm.value.hora | date:'h:mm a' }}</b>
+
+            </div>
+          </div>
+
+          <div class="termConditions">
+            <div class="field-checkbox">
+              <!-- <p-checkbox name="group2" formControlName="contactWsp" value="true" inputId="wsp"></p-checkbox> -->
+
+              <!-- <p-checkbox [ngModel]="termConditions" [binary]="true" inputId="termCon"></p-checkbox> -->
+              <!-- <p-checkbox [(ngModel)]="termConditions" [binary]="true" inputId="termCon"></p-checkbox> -->
+              <p-checkbox formControlName="condiciones" [binary]="true" inputId="termCon"></p-checkbox>
+
+              <label for="termCon">Acepto los términos y condiciones de sus <a
+                  (click)="showCondicionesModal=true">Políticas de Privacidad</a></label>
+            </div>
+          </div>
+          <div style="text-align:center;">
+            <small class="p-error" *ngIf="campoValidando('condiciones')">Es necesario aceptar
+              los términos y
+              condiciones.</small>
+          </div>
+
+        </div>
+
+        <ng-template pTemplate="footer">
+          <div class="buttonFooterConfirm">
+            <p-button label="Anterior" icon="pi pi-angle-left" (onClick)="backCard(3)"></p-button>
+            <button pButton pRipple type="button" label="Enviar Solicitud" icon="pi pi-angle-right" iconPos="right"
+              class="p-button-success" (click)="guardarSolicitud()"></button>
+          </div>
+        </ng-template>
+
+      </p-card>
+
+    </div>
+
+
+    <!-- <p-card>
+      <button pButton (click)="authService.stepSoliIndex = 0">0</button>
+      <button pButton (click)="authService.stepSoliIndex = 1">1</button>
+      <button pButton (click)="authService.stepSoliIndex = 2">2</button>
+      <button pButton (click)="authService.stepSoliIndex = 3">3</button>
+      <button pButton (click)="showCondicionesModal=true">Cond</button>
+      <br>
+
+      {{ solicitudForm.value | json }}
+      <hr>
+      {{ solicitudForm.valid }}
+      <hr>
+      {{ termConditions }}
+    </p-card> -->
+
+
+  </div>
+</div>
+
+<!-- DIALOG MOSTRANDO TERMINOS Y CONDICIONES - POLITICAS DE PRIVACIDAD -->
+
+<p-dialog header="Políticas de Privacidad" [(visible)]="showCondicionesModal" [modal]="true" [style]="{width: '70vw'}"
+  [draggable]="false" [resizable]="false">
+
+  <p class="text-justify">
+    El Consultorio Dental El Buen Samaritano, respeta su derecho a la
+    privacidad
+    online cuando usa nuestra
+    página web y se comunica electrónicamente con nosotros. Por eso,
+    como
+    parte
+    de nuestro compromiso para cumplir con sus expectativas, hemos
+    establecido
+    una política de protección de la privacidad para los usuarios de
+    nuestra
+    página web. La presente política formaliza nuestro compromiso con la
+    protección y correcto uso de los datos de los usuarios y pacientes
+    que
+    podamos manejar.
+  </p>
+  <p class="text-justify">En Bolivia aún no se cuenta con una ley general de
+    protección de datos
+    personales, por lo que nos basámos en las leyes generales de la
+    constitucion
+    política del estado como el derecho a la privacidad en el <b>Artículo
+      21.2</b> de la constitucion política del estado, <b>Artículo 18°</b>
+    del
+    código Civíl y en
+    la
+    <b>Ley No 3131</b>.
+  </p>
+  <label class="mb-2" style="font-size: 20px; color: rgb(65, 109, 255)">
+    <b>
+      Ley
+      N° 3131. Ley del
+      Ejercicio Profesional
+      Médico
+    </b>
+  </label>
+  <p>
+    Esta ley declara expresamente los Derechos y Deberes del Médico como
+    también los Derechos y Deberes del Paciente.
+  </p>
+  <p>
+    El Consultorio Dental se
+    basa principalmente en los siguientes articulos:
+
+  </p>
+
+  <ul>
+    <li><b>Artículo 3°.-</b> (Principios) <br>
+      c) En el ejercicio profesional médico, inclusive en
+      la enseñanza de
+      la medicina, el secreto médico es inviolable salvo las excepciones
+      previstas en la presente Ley.</li>
+    <li><b>Articulo 4°.-</b> (Definiciones) <br>
+      SECRETO MÉDICO: Toda información identificada
+      durante el acto médico
+      sobre el estado de salud o enfermedad del paciente, su tratamiento y
+      toda otra información de tipo personal, debe mantenerse en secreto,
+      inclusive después de su muerte, para salvaguarda de la dignidad del
+      paciente.</li>
+    <li><b>Artículo 12°.-</b> (Deberes del Médico) Son deberes del
+      profesional
+      médico: <br>
+      k) Guardar el secreto médico, aunque haya cesado la
+      prestación de
+      sus servicios..
+    </li>
+
+    <li>
+      <b>Artículo 13°.-</b> (Derechos del Paciente) Todo paciente tiene derecho a: <br>
+      <dl>
+        <dd>&#10240;&#10240;c) La confidencialidad.</dd>
+        <dd>&#10240;&#10240;d) Secreto médico.</dd>
+        <dd>&#10240;&#10240;g) Reclamar y denunciar si considera que sus
+          derechos
+          humanos han
+          sido vulnerados durante la atención médica.</dd>
+        <dd>&#10240;&#10240;i) Respeto a su intimidad.</dd>
+      </dl>
+    </li>
+
+  </ul>
+
+  <label class="mb-2" style="font-size: 20px; color: rgb(65, 109, 255)"><b>
+      Uso de los datos recopilados</b></label>
+  <p>
+    Usted autoriza expresamente al Consultorio Dental el Buen Samaritano,
+    incorporar su información al
+    banco de Datos Personales de Pacientes, para fines de prestación del
+    servicio.
+  </p>
+  <p>
+    Los formularios de nuestra página web han sido creados con las
+    finalidades necesarias para el servicio y que son las siguientes:
+  </p>
+  <ul>
+    <li>Coordinar y programar su cita de atención odontológica, para
+      posteriormente enviarle un mensaje de recordatorio de cita.</li>
+    <li>Control de asistencia e inasistencia de nuestros pacientes.</li>
+  </ul>
+  <p>
+    Considerando los fines descritos, usted otorga su consentimiento de
+    manera indefinida. Si no está de acuerdo con el tratamiento posterior de
+    su información, usted podrá revocar la presente autorización y proceder
+    de acuerdo a lo indicado en el punto de protección y derechos de datos.
+  </p>
+  <label class="mb-2" style="font-size: 20px; color: rgb(65, 109, 255)"><b>
+      Protección y derechos de datos</b></label>
+  <p class="text-justify">En el momento que Usted considere conveniente, puede
+    revocar su
+    consentimiento o ejercer sus derechos que como titular de datos
+    personales,
+    de manera gratuita y sólo de la información que proporcionó y
+    en la base de datos que corresponde al formulario Citas en línea.
+
+    Para tal efecto, usted puede apersonarse al consultorio Dental El Buen
+    Samaritano ubicado en la ciudad de El Alto, La Paz y preguntar por el
+    área de Soporte y Sistemas para, indicar lo que usted desea que sea haga
+    con
+    la información personal que
+    registró en el formulario.</p>
+
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="closeModalCondicions()" label="Ok" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>

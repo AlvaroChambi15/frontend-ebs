@@ -15,149 +15,95 @@ export class AppMenuComponent implements OnInit {
     ngOnInit() {
         this.model = [
             {
-                label: 'Home',
+                label: 'DASHBOARD',
                 items: [
-                    { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }
+                    { label: 'Inicio', icon: 'pi pi-th-large', routerLink: ['/sisebs'] }
                 ]
             },
             {
-                label: 'UI Components',
-                items: [
-                    { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout'] },
-                    { label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input'] },
-                    { label: 'Float Label', icon: 'pi pi-fw pi-bookmark', routerLink: ['/uikit/floatlabel'] },
-                    { label: 'Invalid State', icon: 'pi pi-fw pi-exclamation-circle', routerLink: ['/uikit/invalidstate'] },
-                    { label: 'Button', icon: 'pi pi-fw pi-mobile', routerLink: ['/uikit/button'], class: 'rotated-icon' },
-                    { label: 'Table', icon: 'pi pi-fw pi-table', routerLink: ['/uikit/table'] },
-                    { label: 'List', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/list'] },
-                    { label: 'Tree', icon: 'pi pi-fw pi-share-alt', routerLink: ['/uikit/tree'] },
-                    { label: 'Panel', icon: 'pi pi-fw pi-tablet', routerLink: ['/uikit/panel'] },
-                    { label: 'Overlay', icon: 'pi pi-fw pi-clone', routerLink: ['/uikit/overlay'] },
-                    { label: 'Media', icon: 'pi pi-fw pi-image', routerLink: ['/uikit/media'] },
-                    { label: 'Menu', icon: 'pi pi-fw pi-bars', routerLink: ['/uikit/menu'], preventExact: true },
-                    { label: 'Message', icon: 'pi pi-fw pi-comment', routerLink: ['/uikit/message'] },
-                    { label: 'File', icon: 'pi pi-fw pi-file', routerLink: ['/uikit/file'] },
-                    { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/uikit/charts'] },
-                    { label: 'Misc', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/misc'] }
-                ]
-            },
-            {
-                label: 'Prime Blocks',
-                items: [
-                    { label: 'Free Blocks', icon: 'pi pi-fw pi-eye', routerLink: ['/blocks'], badge: 'NEW' },
-                    { label: 'All Blocks', icon: 'pi pi-fw pi-globe', url: ['https://www.primefaces.org/primeblocks-ng'], target: '_blank' },
-                ]
-            },
-            {
-                label: 'Utilities',
-                items: [
-                    { label: 'PrimeIcons', icon: 'pi pi-fw pi-prime', routerLink: ['/utilities/icons'] },
-                    { label: 'PrimeFlex', icon: 'pi pi-fw pi-desktop', url: ['https://www.primefaces.org/primeflex/'], target: '_blank' },
-                ]
-            },
-            {
-                label: 'Pages',
+                label: 'OPERACIÓN',
                 icon: 'pi pi-fw pi-briefcase',
                 routerLink: ['/pages'],
                 items: [
                     {
-                        label: 'Landing',
-                        icon: 'pi pi-fw pi-globe',
-                        routerLink: ['/landing']
-                    },
-                    {
-                        label: 'Auth',
-                        icon: 'pi pi-fw pi-user',
+                        label: 'Citas',
+                        icon: 'pi pi-calendar',
                         items: [
                             {
-                                label: 'Login',
-                                icon: 'pi pi-fw pi-sign-in',
+                                label: 'Solicitudes',
+                                icon: 'pi pi-inbox',
+                                routerLink: ['/sisebs/cita/solicitud']
+                            },
+                            {
+                                label: 'Gestión Citas',
+                                icon: 'pi pi-server',
+                                routerLink: ['/sisebs/cita']
+                            }
+                        ]
+                    },
+                    {
+                        label: 'Pacientes',
+                        icon: 'pi pi-users',
+                        routerLink: ['/pages/crud']
+                    },
+                    {
+                        label: 'Planes Clínicos',
+                        icon: 'pi pi-book',
+                        routerLink: ['/pages/timeline']
+                    }
+                ]
+            },
+            {
+                label: 'ADMINISTRACIÓN',
+                icon: 'pi pi-fw pi-briefcase',
+                routerLink: ['/pages'],
+                items: [
+                    {
+                        label: 'Gestión',
+                        icon: 'pi pi-sliders-h',
+                        items: [
+                            {
+                                label: 'Doctores',
+                                icon: 'pi pi-briefcase',
                                 routerLink: ['/auth/login']
                             },
                             {
-                                label: 'Error',
-                                icon: 'pi pi-fw pi-times-circle',
+                                label: 'Tratamientos',
+                                icon: 'pi pi-list',
                                 routerLink: ['/auth/error']
                             },
                             {
-                                label: 'Access Denied',
-                                icon: 'pi pi-fw pi-lock',
+                                label: 'Radiografias',
+                                icon: 'pi pi-images',
                                 routerLink: ['/auth/access']
                             }
                         ]
                     },
                     {
-                        label: 'Crud',
-                        icon: 'pi pi-fw pi-pencil',
-                        routerLink: ['/pages/crud']
-                    },
-                    {
-                        label: 'Timeline',
-                        icon: 'pi pi-fw pi-calendar',
-                        routerLink: ['/pages/timeline']
-                    },
-                    {
-                        label: 'Not Found',
-                        icon: 'pi pi-fw pi-exclamation-circle',
-                        routerLink: ['/pages/notfound']
-                    },
-                    {
-                        label: 'Empty',
-                        icon: 'pi pi-fw pi-circle-off',
-                        routerLink: ['/pages/empty']
-                    },
-                ]
-            },
-            {
-                label: 'Hierarchy',
-                items: [
-                    {
-                        label: 'Submenu 1', icon: 'pi pi-fw pi-bookmark',
+                        label: 'Mi Consultorio',
+                        icon: 'pi pi-home',
                         items: [
                             {
-                                label: 'Submenu 1.1', icon: 'pi pi-fw pi-bookmark',
-                                items: [
-                                    { label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-bookmark' },
-                                    { label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-bookmark' },
-                                    { label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-bookmark' },
-                                ]
+                                label: 'Proveedores',
+                                icon: 'pi pi-fw pi-sign-in',
+                                routerLink: ['/auth/login']
                             },
                             {
-                                label: 'Submenu 1.2', icon: 'pi pi-fw pi-bookmark',
-                                items: [
-                                    { label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }
-                                ]
+                                label: 'Egresos',
+                                icon: 'pi pi-fw pi-times-circle',
+                                routerLink: ['/auth/error']
                             },
+                            {
+                                label: 'Ingresos',
+                                icon: 'pi pi-fw pi-lock',
+                                routerLink: ['/auth/access']
+                            },
+                            {
+                                label: 'General',
+                                icon: 'pi pi-fw pi-lock',
+                                routerLink: ['/auth/access']
+                            }
                         ]
-                    },
-                    {
-                        label: 'Submenu 2', icon: 'pi pi-fw pi-bookmark',
-                        items: [
-                            {
-                                label: 'Submenu 2.1', icon: 'pi pi-fw pi-bookmark',
-                                items: [
-                                    { label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-bookmark' },
-                                    { label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-bookmark' },
-                                ]
-                            },
-                            {
-                                label: 'Submenu 2.2', icon: 'pi pi-fw pi-bookmark',
-                                items: [
-                                    { label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-bookmark' },
-                                ]
-                            },
-                        ]
-                    }
-                ]
-            },
-            {
-                label: 'Get Started',
-                items: [
-                    {
-                        label: 'Documentation', icon: 'pi pi-fw pi-question', routerLink: ['/documentation']
-                    },
-                    {
-                        label: 'View Source', icon: 'pi pi-fw pi-search', url: ['https://github.com/primefaces/sakai-ng'], target: '_blank'
                     }
                 ]
             }

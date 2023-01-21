@@ -1,12 +1,19 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 import { BrowserModule } from '@angular/platform-browser';
+
+import { registerLocaleData } from '@angular/common';
+import localEs from '@angular/common/locales/es';
+
+registerLocaleData(localEs);
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { CoreModule } from './core/core.module';
-import { InicioComponent } from './inicio/inicio.component';
 import { DesignComponent } from './design/design.component';
 
 /* ------------------- COMPONENTES ------------------- */
@@ -14,25 +21,66 @@ import { DesignComponent } from './design/design.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppLayoutModule } from './layout/app.layout.module';
 import { Notfound404Component } from './errors/notfound404/notfound404.component';
-
-/* ------------------- SERVICIOS ------------------- */
+import { WebComponent } from './inicio/web/web.component';
+import { ReservaComponent } from './inicio/reserva/reserva.component';
+import { HeaderComponent } from './inicio/layout/header/header.component';
+import { FooterComponent } from './inicio/layout/footer/footer.component';
+import { PersonalComponent } from './inicio/reserva/personal/personal.component';
+import { StepsModule } from 'primeng/steps';
+import { ToastModule } from 'primeng/toast';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { CheckboxModule } from 'primeng/checkbox';
+import { DropdownModule } from 'primeng/dropdown';
+import { CalendarModule } from 'primeng/calendar';
+import { InputMaskModule } from 'primeng/inputmask';
+import { KeyFilterModule } from 'primeng/keyfilter';
+import { DividerModule } from 'primeng/divider';
+import { TooltipModule } from 'primeng/tooltip';
+import { DialogModule } from 'primeng/dialog';
+import { SisebsModule } from './sisebs/sisebs.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent,
     DesignComponent,
-    Notfound404Component
+    Notfound404Component,
+    WebComponent,
+    ReservaComponent,
+    HeaderComponent,
+    FooterComponent,
+    PersonalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
-    AppLayoutModule
+    AppLayoutModule,
+    StepsModule,
+    ToastModule,
+    CardModule,
+    ButtonModule,
+    InputTextModule,
+    CheckboxModule,
+    DropdownModule,
+    CalendarModule,
+    ReactiveFormsModule,
+    InputMaskModule,
+    KeyFilterModule,
+    DividerModule,
+    FormsModule,
+    TooltipModule,
+    DialogModule,
+    SisebsModule
   ],
   providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'es'
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

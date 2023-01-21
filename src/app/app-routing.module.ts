@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { DesignComponent } from './design/design.component';
 import { Notfound404Component } from './errors/notfound404/notfound404.component';
 import { AuthGuard } from './guards/auth.guard';
-import { InicioComponent } from './inicio/inicio.component';
+import { PersonalComponent } from './inicio/reserva/personal/personal.component';
+import { ReservaComponent } from './inicio/reserva/reserva.component';
+import { WebComponent } from './inicio/web/web.component';
 
 const routes: Routes = [
   {
@@ -11,7 +13,14 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: InicioComponent
+        component: WebComponent
+      },
+      {
+        path: 'reserva-cita',
+        component: ReservaComponent,
+        children: [
+          { path: 'personal', component: PersonalComponent }
+        ]
       },
       {
         path: 'auth',
@@ -29,7 +38,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

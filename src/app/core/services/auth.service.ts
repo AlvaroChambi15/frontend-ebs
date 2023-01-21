@@ -10,6 +10,10 @@ import { Router } from '@angular/router';
 
 export class AuthService {
 
+  // WEB
+  btnReservarWeb: boolean = true;
+  stepSoliIndex: number = 0;
+
   urlBase = environment.servidor;
   // token = localStorage.getItem("token")
 

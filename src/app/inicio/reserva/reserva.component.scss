@@ -1,0 +1,716 @@
+    /* #fondo {
+        background-color: #ffffff;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(240)'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='1' stop-color='%234FE'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='541' height='450.8' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.07'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+        background-attachment: fixed;
+        background-size: cover;
+        width: 100%;
+        margin: 0;
+    } */
+    #fondo {
+        background-color: #000446;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(360,683,335)'%3E%3Cstop offset='0' stop-color='%23000446'/%3E%3Cstop offset='1' stop-color='%23FFFFFF'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='874' height='728.3' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.02'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+        background-attachment: fixed;
+        background-size: cover;
+        width: 100%;
+        margin: 0;
+    }
+
+    
+    #fondoFormulario {
+        // background-color: #ffffffb4;
+        padding: 115px 120px;
+    }
+
+    #cardSteps{
+        margin: 0 15px;
+        // text-align: center;
+    }
+
+    .card-steps{
+
+    }
+
+    .contentSteps{        
+        display: grid;
+        text-align: center;
+        
+        grid-template-columns: auto auto auto auto;        
+    }
+
+    /* .step{
+        display: flex;
+        justify-content: center;
+    } */
+
+    .step a{
+        display: grid;
+    }
+
+    .lineBack{
+        top: -75%;
+        left: 0;
+        border-top: 1px solid #dee2e6;
+        position: relative;
+    }
+
+    // CARD PASOS
+
+    .cardStepDatos{
+        margin: 0 10px;
+
+        .p-card-body{
+            padding: 2.5rem 4rem 2.5rem 4rem;
+            .field{
+                input{
+                    width: 100%;
+                }
+                display: grid;
+            }
+        }
+
+        .p-card-footer{
+            .buttonFooter{
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    .cardStepsContact{
+        margin: 0 10px;
+
+        .p-card-body{
+            padding: 2.5rem 4rem 2.5rem 4rem;
+            .field{
+                display: grid;
+
+                input{
+                    width: 100%;
+                }
+
+                label {
+                    // display: inline-block;
+                    margin-bottom: 0.5rem;
+                }
+
+                .tipoContactoTitle{
+                    margin-bottom: 15px;
+                    display: flex;
+                    justify-content: center;
+                    label{
+                        font-size: 20px;
+                        color: #3c3cc0;
+                    }
+                }
+
+                .tipoContacts{
+                    display: flex;
+                    justify-content: space-evenly;
+                    label{
+                        margin: 0 0 0 0.5rem;
+                    }
+                }
+            }
+
+            .txtCelular{
+                width: 100%;
+            }
+        }
+
+        .p-card-footer{
+            .buttonFooterContacto{
+                display: flex;
+                justify-content: space-between;
+            }
+
+
+        }
+    }
+
+    // .cardStepsCita .p-card-body .field .p-dropdown
+
+
+    .cardStepsCita{
+        margin: 0 10px;
+
+        .p-card-body{
+            padding: 2.5rem 4rem 2.5rem 4rem;
+
+            .field{
+                display: block;
+                input{
+                    width: 100%;
+                }
+                .p-dropdown{
+                    width: 100%;        
+                    // overflow: auto;
+                    // min-width: auto;         
+                }
+                label{
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            .solicitudDates{
+                display: flex;
+                margin-right: -1rem;
+                margin-left: -1rem;
+
+                .field{
+                    display: grid;
+                    width: 100%;
+                    padding: 0 14px 0 14px;
+                    label{
+                        margin-bottom: 0.5rem;
+                    }
+                }
+
+                .txtFecha{
+                    display: flex;
+                }
+
+                .txtHora{
+                    display: flex;
+                }
+            }
+        }
+
+        .p-card-footer{
+            .buttonFooterContacto{
+                display: flex;
+                justify-content: space-between;
+            }
+
+
+        }
+    }
+
+    .cardStepsConfirm{
+        margin: 0 10px;
+
+        .p-card-body{
+            padding: 2.5rem 4rem 2.5rem 4rem;
+            .field{                
+                input{
+                    width: 100%;
+                }
+                display: grid;
+                padding: 14px;
+            }
+
+            .nomAp{
+                display: flex;
+                .field{
+                    width: 100%;
+
+                }
+            }
+
+            .emailCel{
+                display: flex;
+                .field{
+                    width: 100%;
+
+                }
+            }
+
+            .fechaHora{
+                display: flex;
+                .field{
+                    width: 100%;
+
+                }
+            }
+        }
+
+        .termConditions{
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+
+            a{
+                font-weight: bolder;
+                // text-decoration: underline;
+                cursor: pointer;
+            }
+            
+            a:hover{
+                text-decoration: underline;
+            }
+        }
+
+        .p-card-footer{
+            .buttonFooterConfirm{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+
+
+
+
+    // ================================
+
+    body {
+        overflow-y: overlay;
+        overflow-x: hidden;
+    }
+
+    body::-webkit-scrollbar {
+        width: 7px;
+        /* display: none; */
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background: rgb(44, 167, 224);
+        border-radius: 4px;
+    }
+
+    /* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+    body::-webkit-scrollbar-thumb:hover {
+        background: #b3b3b3;
+        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Cambiamos el fondo cuando esté en active */
+    body::-webkit-scrollbar-thumb:active {
+        background-color: #999999;
+    }
+
+    /*  */
+    body::-webkit-scrollbar-track {
+        background: #e1e1e100;
+        border-radius: 4px;
+    }
+
+    /* Cambiamos el fondo cuando esté en active o hover */
+    body::-webkit-scrollbar-track:hover,
+    body::-webkit-scrollbar-track:active {
+        background: #d4d4d442;
+    }
+
+    .container{
+        width: 85%;
+        margin: 0 auto;
+        overflow: hidden;
+        /* padding: 80px 0; */
+        max-width: 1200px;
+    }
+    
+    
+    
+    /* END ABOUT  */
+    
+    .about{
+        min-height: 400px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap:80px;
+        padding: 80px 0;
+        justify-items: center;
+        align-items: center;
+    }
+    
+    .about__img{
+        text-align: center;
+    }
+    
+    .about__img--left{
+        text-align: left;
+    }
+    
+    .about__picture{
+        max-width: 80%;
+    }
+    
+    .about__paragraph{
+        margin-bottom: 20px;
+        line-height: 1.5;
+        font-weight: 300;
+    }
+    
+    
+    
+    
+    /* FOOTER NEW */
+    
+    .footer{
+        /* background: var(--color-primary); */
+        background: #0D0825;
+    
+        padding-top: 101px;
+        padding-bottom: 60px;
+    }
+    
+    .grid-container{
+        display: grid;
+        /* background-color: #272727; */
+    
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 180px 60px 85px;
+    
+        grid-template-areas: 
+        'logo item2 item3 item4'
+        'line line line line'
+        'copy copy copy copy';
+    
+        align-content: center;
+    }
+    
+    .grid-container div{
+        /* background-color: midnightblue; */
+        /* text-align: center; */
+        color: white;
+        /* padding: 10px; */
+        /* border: 1px solid rgb(161, 220, 235); */
+    }
+    
+    .logo__footer{
+        
+        display: absolute;
+        align-content: unset;
+        padding: 0 10px;
+        grid-area: logo;
+    }
+    
+    footer p{
+        grid-area: texto;
+        margin-top: 22px;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    
+    .foot__links{
+        display: flex;
+        padding: 0;
+        margin-top: 30px;
+    }
+    
+    .foot__links li{
+    
+        list-style: none;
+        margin-right: 3px;
+    }
+    
+    .foot__links li a{
+        /* background-color: #293347; */
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.24);
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    .item2{
+        grid-area: item2;
+        padding: 0 15px;
+    }
+    
+    .footer .footer-item{
+        color: #0D0825;
+        text-align: center;
+        background-color: white;
+        border-radius: 8px;
+        padding: 40px 10px 20px 10px;
+        height: 100%;
+    }
+    
+    .footer .footer-item .foot-icon {
+        font-size: 30px;
+        color: #ED662F;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        background: #ffffff;
+        position: absolute;
+        transform: translateX(-50%);
+        margin-top: -70px;
+        border-radius: 50%;
+        box-shadow: 0 10px 40px rgba(82, 85, 90, 0.486);
+        
+        transition: all 0.3s;
+    }
+    
+    .footer .footer-item .foot-icon:hover {
+        color: #ffffff;
+        background: #ED662F;
+    }
+    
+    
+    .footer .footer-item .footer__title {
+        margin: 15px 0;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    .footer .footer-item .footer__desc {
+        font-size: 16px;
+        font-weight: 500;
+    }
+    
+    .footer .footer-item .footer__desc a{
+        color: #293347;
+        text-decoration: none;
+    
+    }
+    
+    
+    
+    
+    .item3{
+        grid-area: item3;
+        padding: 0 15px;
+    }
+    
+    .item4{
+        grid-area: item4;
+        padding: 0 15px;
+    }
+    
+    .item5{
+        grid-area: line;
+        /* z-index: 5; */
+    }
+    
+    .footer .grid-container .footer__line{
+        margin-top: 50px;
+        background-color: rgba(255, 255, 255, 0.24);
+    
+        height: 1px;
+    }
+    
+    .item6{
+        grid-area: copy;
+    }
+    
+    .footer .copy-right {
+        text-align: center;
+        color: #f6f8f9;
+        /* font-weight: 500; */
+        /* position: relative; */
+        /* margin-top: 50px; */
+        padding-top: 60px;
+    }
+    
+    .footer .copy-right .copy__desc{
+        margin: 0;
+        font-size: 13px;
+    }
+    
+    /* // PARA SOLUCIONAR EL INPUT DE PASSWORD EN PRIMENG */
+    
+    .resetPassModal{
+        width: 100%;
+        div{
+            width: 100%;
+    
+        }
+    }
+        p-password.spasswordIO{
+            padding: 40px;
+          }
+          
+          input.passwordIO2{
+            padding: 40px;
+          }
+          
+          :host ::ng-deep .width-100 {
+            width: 100%;
+          }
+    
+    
+      
+      /* END SOLUTION */
+    
+    
+    
+    /* END FOOTER NEW */
+    
+    /* RESPONSICE DESIGN */
+    
+    @media screen and (max-width: 1270px){
+        footer p{
+        margin-top: 12px;
+        }
+    
+        .foot__links{
+            margin-top: 15px;
+        }    
+    }
+    
+    @media screen and (max-width: 1000px){
+
+        #fondoFormulario {
+            padding: 115px 50px;
+        }
+    
+    }
+    
+    
+    @media screen and (max-width:800px){
+
+        #fondoFormulario {
+            padding: 115px 0;
+        }
+    
+         /* MENU */
+    
+         .checkBtn{
+            display: block;
+        }
+    
+        .header-area ul{
+            position: fixed;
+            /* width: 100%; */
+            width: 280px;
+            height: 100vh;
+            background: #293347;
+            top: 0px;
+            left: -100%;
+            // display: grid;
+            align-content: center;
+            /* text-align: center; */
+            transition: all .5s;
+    
+            flex-direction: column;
+            align-items: baseline !important;
+        }
+    
+        .header-area nav ul li{
+            display: grid;
+            float: left;
+            margin: 5px 0;
+            line-height: 30px;
+        }
+    
+        .header-area nav ul li a{
+            font-size: 20px;
+        }
+    
+        .header-area li a:hover, li a.active{
+            background: none;
+            color: red;
+        }
+    
+        #check:checked ~ ul{
+            left: 0;
+        }
+    
+         /* END MENU */
+    
+         .nav{
+            justify-content: space-around;
+         }
+         
+        .nav__items--cta{
+            border: none;
+        }
+    
+         .nav__items{
+            font-weight: 400;
+            border-bottom: 1px solid #fff;
+            margin-right: 0;
+         }
+    
+         .nav__items--footer{
+            border: none;
+         }
+
+    }
+    
+    @media screen and (max-width: 680px){
+       
+    }
+    
+    @media screen and (max-width: 560px){
+        .cardStepsConfirm .p-card-body .nomAp{
+            display: grid;
+        }
+    }
+    
+    @media screen and (max-width: 500px){
+
+        .cardStepDatos .p-card-body{
+            padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+        }
+        .cardStepsContact .p-card-body{
+            padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+        }
+        
+        .cardStepsCita .p-card-body{
+            padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+        }
+
+        .cardStepsContact .p-card-body .field .tipoContacts{
+            display: grid;
+        }
+
+        .cardStepsConfirm .p-card-body{
+            padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+        }    
+
+    }
+
+    @media screen and (max-width: 460px){
+
+        .cardStepsConfirm .p-card-body .emailCel{
+            display: grid;
+        }
+
+        .cardStepsConfirm .p-card-footer .buttonFooterConfirm{
+            display: grid;
+        }
+
+        .cardStepsConfirm .p-card-footer .buttonFooterConfirm button{
+            margin-top: 10px;
+        }
+    }
+    
+    @media screen and (max-width: 400px){
+        /* .stepsNumbers{
+            // background-color: green;            
+            .p-steps ul{
+                background-color: green;
+                display: grid;
+            }
+        } */
+
+        .p-steps ul{
+            // background-color: green;
+            display: grid !important;
+        }
+
+        .cardStepsCita .p-card-body .solicitudDates{
+            display: grid;
+        }
+
+        .cardStepsConfirm .p-card-body .fechaHora{
+            display: grid;
+        }
+
+        .cardStepsContact .p-card-footer .buttonFooterContacto{
+            display: grid;
+        }
+
+        .cardStepsContact .p-card-footer .buttonFooterContacto p-button:last-child{
+            margin-top: 10px;
+        }
+        
+        .cardStepsCita .p-card-footer .buttonFooterContacto{
+            display: grid;
+        }
+        
+        .cardStepsCita .p-card-footer .buttonFooterContacto p-button:last-child{
+            margin-top: 10px;
+        }
+
+
+    }

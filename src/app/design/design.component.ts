@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CargarScriptsService } from '../cargar-scripts.service';
 
 @Component({
   selector: 'app-design',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DesignComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _cargarScript: CargarScriptsService) {
+    // _cargarScript.carga(["menu"]);
+  }
 
   ngOnInit(): void {
+    // this._cargarScript.carga(["menu"]);
   }
 
 }
