@@ -14,6 +14,12 @@
       <section class="hero__container">
         <div class="hero__texts">
           <h1 class="hero__title">Comprometidos siempre</h1>
+
+          <!-- <a (click)="scroll('destination')">Holi</a> -->
+
+          <!-- <a (click)="goTo('destination')">Go TO DIV</a> -->
+          <!-- <a [routerLink]="['/']" fragment="destination">IR AQUI</a> -->
+
           <h2 class="hero__subtitle">con la salud dental de nuestros pacientes</h2>
           <!-- <a href="https://api.whatsapp.com/send?phone=59177202357&text=Hola!" target="_blank"
             class="hero__cta">Contactame Ahora &nbsp;
@@ -50,8 +56,9 @@
 
   </section>
 
-  <section class="presentation">
+  <section id="Tratamientos" class="presentation">
 
+    <!-- <p #elemento>Scroll aqui</p> -->
 
     <div class="container grid-containerP">
 
@@ -378,7 +385,20 @@
 
   </section>
 
-  <section class="reserva">
+  <section id="Reserva" class="reserva">
+
+
+    <div class="svgReservaCitaDiv">
+      <svg class="svgReservaCita" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1440 320"
+        style="height: 100%; width: 100%;">
+        <path fill="" fill-opacity="1"
+          d="M0,160L60,149.3C120,139,240,117,360,133.3C480,149,600,203,720,192C840,181,960,107,1080,85.3C1200,64,1320,96,1380,112L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+        </path>
+      </svg>
+    </div>
+
+
+
 
     <div class="container contenedorReserva">
 
@@ -388,9 +408,12 @@
 
       <div class="contenidoReserva">
 
-        <div class="sectionImg" data-aos="fade-right">
+        <div class="sectionImg" data-aos="fade-right" data-aos-duration="1800">
           <img src="assets/img/web/celular3.png" alt="">
         </div>
+
+        <!-- Este data aos: es para que la animación solo se ejecute una vez  -->
+        <!-- data-aos-once="true" -->
 
         <div class="contenidoTexto" data-aos="flip-left" data-aos-duration="2000">
 
@@ -401,7 +424,9 @@
 
           <div class="reservarCita">
 
-            <div class="btnReservarCita">
+            <div (click)="goToReserva()" class="btnReservarCita">
+              <!-- routerLink="/reserva-cita" -->
+              <!-- <span routerLink="/reserva-cita">RESERVAR CITA</span> -->
               <span>RESERVAR CITA</span>
             </div>
 
@@ -413,79 +438,199 @@
 
     </div>
 
+    <!-- <div class="contact-svg">
+
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+        <path d="M-13.26,150.48 C261.57,-16.28 449.48,81.41 509.87,-5.42 L500.00,150.00 L0.00,150.00 Z">
+        </path>
+      </svg>
+
+    </div> -->
+
+
+
+    <svg class="svgContact" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1440 320">
+      <path fill="" fill-opacity="1"
+        d="M0,160L60,149.3C120,139,240,117,360,133.3C480,149,600,203,720,192C840,181,960,107,1080,85.3C1200,64,1320,96,1380,112L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+      </path>
+    </svg>
+
+
+
+
   </section>
 
 
 
-  <section class="projects">
+
+  <section id="Contacto" class="projects">
+    <div class="tituloContacto">
+      <span>CONTACTO</span>
+    </div>
 
     <div class="container">
 
-      <h2 class="subtitle">NEUROCIENCIAS Y PSICOLOGÍA PARA LA EDUCACIÓN</h2>
 
-      <div class="docente">
-        <span>Docente: Lic. Katherine Fabiola Flores Laura</span>
+
+      <div class="googleMaps" data-aos="fade-left" data-aos-duration="3000">
+
+        <div class="here">
+          <span>Encuentranos Aqui!</span> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+            fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+          </svg>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244774.08830162557!2d-68.35428355180682!3d-16.5465251597821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edebe842e2473%3A0x3a1f8a2f17f89d8f!2sEl%20Alto!5e0!3m2!1ses!2sbo!4v1647815865250!5m2!1ses!2sbo"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
 
-      <div class="radius-divider">
-        <span class="divider divider1"></span>
-        <span class="divider divider2"></span>
-        <span class="divider divider3"></span>
+      <div class="textoContent" data-aos="flip-down" data-aos-duration="3000">
+
+        <div class="imgToth" style="height: 100px;">
+          <img src="assets/img/web/tooth_icon.png" alt="" height="100%">
+          <!-- tooth_icon.png -->
+        </div>
+
+        <span class="nombreDoc">Dra. Maribel Mamani Chavez</span>
+
+
+        <div class="celularContact">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+            class="bi bi-telephone-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+          </svg>
+          <span>68142923</span>
+        </div>
+
+        <div class="direccionContact">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#de4d40" class="bi bi-geo-alt-fill"
+            viewBox="0 0 20 20">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+          </svg>
+          <span>El Alto, Nuevos Horizontes III Av. Alamos Calle Rio Madre de Dios N°47</span>
+        </div>
+
+        <div class="horarioContact">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-calendar3"
+            viewBox="0 0 16 16">
+            <path
+              d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+            <path
+              d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+          </svg>
+
+          <span><b>Horario:</b></span><br>
+
+          <span>Lunes a Sábado</span>
+          <br>
+          <span style="font-family:inherit;font-weight:bold;">15:00 - 21:00</span>
+        </div>
+
       </div>
 
-      <div class="projects__grid">
-
-        <!-- TODO:ESTO PARA CARDS INTERCALADOS -->
-        <!-- <div class="card" style="flex-direction: row-reverse;"> -->
 
 
-
-
-
-        <!-- BOTON DE AGREGAR UNIDAD DE FORMACIÓN -->
-
-      </div>
     </div>
+
   </section>
+
+
+  <!--   <div id="destination">
+    <h2>Destination</h2>
+  </div> -->
+
 
   <section class="testimony">
 
+    <div class="svgReservaCitaDiv" style="height: 100px; overflow: hidden; position: absolute; width: 100%; top: 0;">
+      <svg class="svgReservaCita" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1440 320"
+        style="height: 100%; width: 100%;">
+        <path fill="" fill-opacity="1"
+          d="M0,160L60,149.3C120,139,240,117,360,133.3C480,149,600,203,720,192C840,181,960,107,1080,85.3C1200,64,1320,96,1380,112L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+        </path>
+      </svg>
+    </div>
+
+
+
     <div class="container">
 
-      <h1 class="subtitle">Frases de inspiración </h1>
+      <!-- <h1 class="subtitle">Frases de inspiración </h1> -->
       <div class="testimony__grid">
-        <article class="testimony__item">
+
+        <article class="testimony__item" data-aos="fade-right" data-aos-duration="3000">
           <div class="testimony__person">
-            <img src="assets/img/PauloFreire.jpg" alt="" class="testimony__img">
-            <div class="testimony__texts">
-              <h3 class="testimony__name">Paulo Freire</h3>
-              <p class="testimony__verification">Pedagogó</p>
+
+            <!-- <img src="assets/img/PauloFreire.jpg" alt="" class="testimony__img"> -->
+
+            <!-- <div class="visionIcon" style="width: 100px; color: white;">
+              <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="m21 4c0-.478-.379-1-1-1h-16c-.62 0-1 .519-1 1v16c0 .621.52 1 1 1h16c.478 0 1-.379 1-1zm-3 11.25c0 .414-.336.75-.75.75h-4.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h4.5c.414 0 .75.336.75.75zm-11.772-.537c-.151-.135-.228-.321-.228-.509 0-.375.304-.682.683-.682.162 0 .324.057.455.173l.746.665 1.66-1.815c.136-.147.319-.221.504-.221.381 0 .684.307.684.682 0 .163-.059.328-.179.459l-2.116 2.313c-.134.147-.319.222-.504.222-.162 0-.325-.057-.455-.173zm11.772-2.711c0 .414-.336.75-.75.75h-4.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h4.5c.414 0 .75.336.75.75zm-11.772-1.613v.001c-.151-.135-.228-.322-.228-.509 0-.376.304-.682.683-.682.162 0 .324.057.455.173l.746.664 1.66-1.815c.136-.147.319-.221.504-.221.381 0 .684.308.684.682 0 .164-.059.329-.179.46l-2.116 2.313c-.134.147-.319.221-.504.221-.162 0-.325-.057-.455-.173zm11.772-1.639c0 .414-.336.75-.75.75h-4.5c-.414 0-.75-.336-.75-.75s.336-.75.75-.75h4.5c.414 0 .75.336.75.75z"
+                  fill-rule="nonzero" /></svg>
+            </div> -->
+
+            <div class="visionIcon">
+              <img src="assets/img/web/vision.png" alt="">
             </div>
+
+            <div class="testimony__texts">
+              <h3 class="testimony__name">VISIÓN</h3>
+              <!-- <p class="testimony__verification">Pedagogó</p> -->
+            </div>
+
           </div>
           <p class="testimony__review"><i>
               <b>
-                " La educación no cambia el mundo; cambia a las personas que van a
-                cambiar el mundo "
+                "Se plantea ser el consultorio dental referente en el distrito, por la calidad de su trabajo y por el
+                trato a sus pacientes, desando establecer
+                una relación duradera y accesible con los pacientes "
               </b>
             </i></p>
         </article>
-        <article class="testimony__item">
+
+        <article class="testimony__item" data-aos="fade-left" data-aos-duration="3000">
+
           <div class="testimony__person">
-            <img src="assets/img/Platon.jpg" alt="" class="testimony__img">
+
+            <!-- <img src="assets/img/Platon.jpg" alt="" class="testimony__img"> -->
+
+            <div class="visionIcon">
+              <img src="assets/img/web/aim.png" alt="">
+            </div>
+
             <div class="testimony__texts">
-              <h3 class="testimony__name">Platón</h3>
-              <p class="testimony__verification">Filósofo</p>
+              <h3 class="testimony__name">MISIÓN</h3>
+              <!-- <p class="testimony__verification">Filósofo</p> -->
             </div>
           </div>
           <p class="testimony__review"><i>
               <b>
-                " Mejor un poco que esté bien hecho, que una gran cantidad
-                imperfecta "
+                " Nuestro deber es prestar y garantizar con ética y profesionalismo los
+                tratamientos odontologicos que se realizan a los pacientes brindando confianza, satisfacción y óptimos
+                resultados, contribuyendo de esta menera a la salud mental de la poblacion que acude al consultorio "
               </b>
             </i>
           </p>
         </article>
       </div>
+    </div>
+
+
+
+    <div class="svgFooterDivFooter">
+      <svg class="svgReservaCitaFooter" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        viewBox="0 0 1440 320" style="height: 100%; width: 100%;" transform="rotate(180)">
+        <path fill="" fill-opacity="1"
+          d="M0,160L60,149.3C120,139,240,117,360,133.3C480,149,600,203,720,192C840,181,960,107,1080,85.3C1200,64,1320,96,1380,112L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+        </path>
+      </svg>
     </div>
 
   </section>
@@ -494,6 +639,63 @@
 
   <!-- <app-footer></app-footer> -->
 
+  <footer class="footer">
+
+
+
+    <div class="container contenedorFooter">
+
+      <div class="col1">
+        <div class="imgLogo">
+
+          <div class="imgfooterLogo">
+            <img src="assets/img/LOGO-A1-2.png" alt="" height="95px">
+          </div>
+          <div class="nameEBS">
+            <!-- <span>CONSULTORIO DENTAL</span>
+              <span>"EL BUEN SAMARITANO"</span> -->
+            <span>
+              CONSULTORIO DENTAL <b>"EL <a routerLink="reserva-cita">BUEN</a> SAMARITANO"</b>
+            </span>
+            <br>
+            <span class="cityCol1">El Alto - La Paz - Bolivia</span>
+          </div>
+
+        </div>
+
+        <!-- <div class="cityFooter">
+          <span>El Alto - La Paz - Bolivia</span>
+        </div> -->
+
+      </div>
+
+      <div class="col2">
+        <div class="follow">Siguenos en:</div>
+        <div class="imgSocial">
+          <img class="imgFacebook" src="assets/img/web/fb.png" alt="" height="81px">
+          <img class="imgWhatsapp" src="assets/img/web/ws.png" alt="" height="81px">
+          <img class="imgTwitter" src="assets/img/web/twt.png" alt="" height="81px">
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="footerDown">
+      © Copyright 2023 | Created by AMC
+    </div>
+  </footer>
+
   <!-- END FOOTER -->
 
 </main>
+
+<!-- <div class="svgFooterDivWeb">
+  <svg class="svgReservaCita" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1440 320"
+    style="height: 100%; width: 100%;" transform="rotate(180)">
+    <path fill="" fill-opacity="1"
+      d="M0,160L60,149.3C120,139,240,117,360,133.3C480,149,600,203,720,192C840,181,960,107,1080,85.3C1200,64,1320,96,1380,112L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+    </path>
+  </svg>
+</div> -->

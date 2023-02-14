@@ -4,372 +4,449 @@
 
 <!-- <p>reserva works!</p> -->
 
+<section class="reserva">
 
-<div class="row justify-content-center" id="fondo">
-  <div class="container col-lg-9" id="fondoFormulario">
+  <div class="row justify-content-center" id="fondo">
+    <div class="container col-lg-9" id="fondoFormulario">
 
-    <div class="row text-center pb-4">
+      <div class="row text-center pb-4">
 
-      <h1 for="" style="color: rgb(240 255 0); border: 1px solid;border-radius: 100px;padding: 15px 0 5px 0;"><b><svg
-            xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-emoji-smile"
-            viewBox="0 0 20 20">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-            <path
-              d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z" />
-          </svg>Solicita tu Cita!</b></h1>
-      <label for="" class="mt-5" style="font-size: 30px; color:white;"><b>Atendemos de Lunes a Sábado de 3pm a
-          9pm</b></label>
-      <label for="" class="mt-3" style="font-size: 17px; font-weight: bold; color: yellow;">
-        Completa el siguiente formulario y nos
-        comunicaremos contigo para
-        reservar tu
-        cita!</label>
-    </div>
-
-    <!-- <div id="cardSteps" class="card card-steps">
-
-      <div class="contentSteps">
-        <div class="step step1">
-
-          <div>
-            <a href="">
-              <div><span>1</span></div> 
-              <div><span>Personal</span></div>
-            </a>
-          </div>
-
-          <div class="lineBack"></div>
-
-        </div>
-        <div class="step step2">
-          <a href="">
-            <span>1</span>
-            <span>Contacto</span>
-          </a>
-          <div class="lineBack"></div>
-
-        </div>
-        <div class="step step3">
-          <a href="">
-            <span>1</span>
-            <span>Reserva</span>
-          </a>
-          <div class="lineBack"></div>
-
-        </div>
-        <div class="step step4">
-          <a href="">
-            <span>1</span>
-            <span>Confirmación</span>
-          </a>
-          <div class="lineBack"></div>
-
-        </div>
+        <h1 for="" style="color: rgb(240 255 0); border: 1px solid;border-radius: 100px;padding: 15px 0 5px 0;"><b><svg
+              xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-emoji-smile"
+              viewBox="0 0 20 20">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+              <path
+                d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z" />
+            </svg>Solicita tu Cita!</b></h1>
+        <label for="" class="mt-5" style="font-size: 30px; color:white;"><b>Atendemos de Lunes a Sábado de 3pm a
+            9pm</b></label>
+        <label for="" class="mt-3" style="font-size: 17px; font-weight: bold; color: yellow;">
+          Completa el siguiente formulario y nos
+          comunicaremos contigo para
+          reservar tu
+          cita!</label>
       </div>
 
-    </div>
- -->
-
-    <div class="card cardTitle" style="margin:0 10px 20px 10px;">
-      <!-- <p-toast></p-toast> -->
-      <p-steps [model]="items" styleClass="stepsNumbers" [readonly]="true" [activeIndex]="authService.stepSoliIndex">
-      </p-steps>
-    </div>
-
-    <div [formGroup]="solicitudForm">
-
-      <p-card styleClass="cardStepDatos" *ngIf="authService.stepSoliIndex == 0">
-        <ng-template pTemplate="title">
-          <i class="pi pi-user" style="font-size: 2rem; margin-right:10px;"></i> Datos Personales
-        </ng-template>
-        <ng-template pTemplate="subtitle">
-          Ingrese su información personal
-        </ng-template>
-        <div>
-          <div class="field">
-            <label for="firstname">Nombres</label>
-            <!-- <input type="text" id="firstname" formControlName="nombres" pInputText> -->
-            <input type="text" id="firstname" formControlName="nombres" [pKeyFilter]="letrasEspacio" pInputText>
-            <!-- <small class="p-error" *ngIf="campoValidando('nombres')">El nombre es requerido.</small> -->
-            <small class="p-error" *ngIf="campoValidando('nombres')">El nombre es
-              requerido.</small>
-          </div>
-          <div class="field">
-            <label for="lastname">Apellidos</label>
-            <input type="text" id="lastname" formControlName="apellidos" [pKeyFilter]="letrasEspacio" pInputText>
-            <small class="p-error" *ngIf="campoValidando('apellidos')">Los apellidos son requeridos.</small>
-          </div>
-          <div class="field">
-            <label for="age">Edad</label>
-            <input id="age" formControlName="edad" type="number" min="0" max="160" pInputText>
-            <small class="p-error" *ngIf="campoValidando('edad')">La edad es requerida.</small>
-          </div>
-        </div>
-        <ng-template pTemplate="footer">
-          <div class="buttonFooter">
-            <p-button label="Siguiente" icon="pi pi-angle-right" iconPos="right" (onClick)="nextCard(0)"></p-button>
-          </div>
-        </ng-template>
-      </p-card>
-
-      <p-card styleClass="cardStepsContact" *ngIf="authService.stepSoliIndex == 1">
-        <ng-template pTemplate="title">
-          <i class="pi pi-phone" style="font-size: 2rem; margin-right:10px;"></i> Datos de Contacto
-        </ng-template>
-        <ng-template pTemplate="subtitle">
-          Ingrese sus datos para que nos contactemos con usted
-        </ng-template>
-        <div>
-
-          <div class="field">
-            <div><i class="pi pi-envelope" style="margin-right: 10px;"></i> <label for="email">Correo (opcional)</label>
+      <!-- <div id="cardSteps" class="card card-steps">
+  
+        <div class="contentSteps">
+          <div class="step step1">
+  
+            <div>
+              <a href="">
+                <div><span>1</span></div>
+                <div><span>Personal</span></div>
+              </a>
             </div>
-            <input id="email" formControlName="email" type="email" pInputText>
-            <small class="p-error" *ngIf="campoValidando('email')">El correo es requerido y debe ser válido.</small>
+  
+            <div class="lineBack"></div>
+  
           </div>
-          <div class="field">
-            <div><i class="pi pi-tablet" style="margin-right: 10px;"></i> <label for="celular">Celular</label></div>
-            <!-- <label for="celular">Celular</label> -->
-            <!-- <input id="celular" type="number" pInputText> -->
-            <input type="text" id="celular" maxlength="8" styleClass="txtCelular" formControlName="celular"
-              [pKeyFilter]="celular" [pValidateOnly]="true" pInputText>
-
-            <!-- <input id="celular" styleClass="txtCelular" formControlName="celular" [pKeyFilter]="celular" pInputText> -->
-
-            <!-- <p-inputMask styleClass="txtCelular" formControlName="celular" mask="99-aa" characterPattern="[А-Яа-я]">
-            </p-inputMask> -->
-
-            <small class="p-error" *ngIf="campoValidando('celular')">El celular es requerido y debe ser válido.</small>
+          <div class="step step2">
+            <a href="">
+              <span>1</span>
+              <span>Contacto</span>
+            </a>
+            <div class="lineBack"></div>
+  
           </div>
-
-          <div class="field">
-            <div class="tipoContactoTitle"><label>¿Como pregieres que te contactemos?</label></div>
-            <div class="tipoContacts">
-              <div class="field-checkbox">
-                <!-- <p-checkbox name="group1" formControlName="contactTelefono" value="true" inputId="tel"></p-checkbox> -->
-                <p-checkbox formControlName="contactTelefono" [binary]="true" inputId="tel"></p-checkbox>
-                <label for="tel">LLamada Telefónica</label>
-              </div>
-              <div class="field-checkbox">
-                <!-- <p-checkbox name="group2" formControlName="contactWsp" value="true" inputId="wsp"></p-checkbox> -->
-                <p-checkbox formControlName="contactWsp" [binary]="true" inputId="wsp"></p-checkbox>
-                <label for="wsp">Whatsapp</label>
-              </div>
-              <div class="field-checkbox">
-                <!-- <p-checkbox name="group3" formControlName="contactEmail" value="true" inputId="em"></p-checkbox> -->
-                <p-checkbox formControlName="contactEmail" [binary]="true" inputId="em"></p-checkbox>
-                <label for="em">Correo Electrónico</label>
-              </div>
-            </div>
+          <div class="step step3">
+            <a href="">
+              <span>1</span>
+              <span>Reserva</span>
+            </a>
+            <div class="lineBack"></div>
+  
+          </div>
+          <div class="step step4">
+            <a href="">
+              <span>1</span>
+              <span>Confirmación</span>
+            </a>
+            <div class="lineBack"></div>
+  
           </div>
         </div>
-        <ng-template pTemplate="footer">
-          <div class="buttonFooterContacto">
-            <p-button label="Anterior" icon="pi pi-angle-left" (onClick)="backCard(1)"></p-button>
-            <!-- <p-button label="Next" icon="pi pi-angle-right" iconPos="right"></p-button> -->
-            <p-button label="Siguiente" icon="pi pi-angle-right" iconPos="right" (onClick)="nextCard(1)"></p-button>
-          </div>
-        </ng-template>
-      </p-card>
+  
+      </div>
+   -->
 
-      <!-- <p-dropdown inputId="class" [options]="tratamientos" optionLabel="name" placeholder="Select a Class">
-      </p-dropdown>
- -->
-      <p-card styleClass="cardStepsCita" *ngIf="authService.stepSoliIndex == 2">
-        <ng-template pTemplate="title">
-          <i class="pi pi-calendar" style="font-size: 2rem; margin-right:10px;"></i> Datos de Solicitud
-        </ng-template>
-        <ng-template pTemplate="subtitle">
-          Ingrese los datos de solicitud para la cita
-        </ng-template>
-        <div class="field">
-          <div><i class="pi pi-list" style="margin-right: 10px;"></i> <label for="fecha">Tratamiento</label></div>
-          <!-- <input id="fecha" type="fecha" pInputText> -->
-          <p-dropdown [options]="tratamientos" formControlName="tratamiento" placeholder="Seleccione un tratamiento"
-            optionLabel="name" scrollHeight="330px" [showClear]="true">
-          </p-dropdown>
-          <!-- <p-dropdown inputId="class" [options]="tratamientos" optionLabel="name" placeholder="Select a Class">
-          </p-dropdown> -->
-          <small class="p-error" *ngIf="campoValidando('tratamiento')">El tratamiento es requerido.</small>
-        </div>
-        <div class="solicitudDates">
-          <div class="field">
-            <div><i class="pi pi-calendar-plus" style="margin-right: 10px;"></i> <label for="fecha">Fecha</label></div>
-            <!-- <input id="fecha" type="fecha" pInputText> -->
-            <!-- <p-calendar formControlName="fecha" [minDate]="minDate" [maxDate]="maxDate" [readonlyInput]="true"
-              inputId="min-max"></p-calendar> -->
-            <p-calendar formControlName="fecha" [disabledDays]="[0]" [touchUI]="true" [minDate]="manana"
-              dateFormat="mm-dd-yy" [readonlyInput]="true" inputId="touchui" styleClass="txtFecha"></p-calendar>
-            <small class="p-error" *ngIf="campoValidando('fecha')">La fecha es requerida.</small>
-          </div>
-          <div class="field">
-            <div><i class="pi pi-clock" style="margin-right: 10px;"></i> <label for="hora">Hora</label></div>
-            <!-- <input id="hora" type="number" pInputText> -->
-            <!-- <input pInputText type="date" name="fecha_cita" min="15/11/2022"> -->
+      <div class="card cardTitle" style="margin:0 10px 20px 10px;">
+        <!-- <p-toast></p-toast> -->
+        <p-steps [model]="items" styleClass="stepsNumbers" [readonly]="true" [activeIndex]="authService.stepSoliIndex">
+        </p-steps>
+      </div>
 
-            <!-- <input pInputText type="time" formControlName="hora" name="hora_cita" class="form-control"
-              placeholder="Hora" min="15:00" max="21:00"> -->
+      <div [formGroup]="solicitudForm">
 
-            <p-calendar [baseZIndex]="10" formControlName="hora" [timeOnly]="true" [showTime]="true" hourFormat="24"
-              inputId="timeonly" styleClass="txtHora" aria-valuenow="" [stepMinute]="10">
-            </p-calendar>
-
-            <!-- <input pInputText type="time" name="hora_cita" placeholder="Hora" min="15:00" max="21:00"> -->
-            <small class="p-error" *ngIf="campoValidando('hora')">El hora es requerida.</small>
-          </div>
-        </div>
-        <ng-template pTemplate="footer">
-          <div class="buttonFooterContacto">
-            <p-button label="Anterior" icon="pi pi-angle-left" (onClick)="backCard(2)"></p-button>
-            <!-- <p-button label="Next" icon="pi pi-angle-right" iconPos="right"></p-button> -->
-            <!-- <button pButton label="Siguiente" icon="pi pi-angle-right" iconPos="right" (onClick)="nextCard(2)"></button> -->
-            <p-button type="submit" label="Siguiente" icon="pi pi-angle-right" iconPos="right" (onClick)="nextCard(2)">
-            </p-button>
-          </div>
-        </ng-template>
-      </p-card>
-
-      <p-card styleClass="cardStepsConfirm" *ngIf="authService.stepSoliIndex == 3">
-
-        <ng-template pTemplate="title">
-          <i class="pi pi-check" style="font-size: 2rem; margin-right:10px;"></i> Confirmación
-        </ng-template>
-
-        <ng-template pTemplate="subtitle">
-          Confirma todos tus datos para que la solicitud sea enviada y nos contactemos con usted
-        </ng-template>
-
-        <div>
-
-
-          <div class="nomAp">
-
-            <!-- <div class="field">
+        <p-card styleClass="cardStepDatos" *ngIf="authService.stepSoliIndex == 0">
+          <ng-template pTemplate="title">
+            <i class="pi pi-user" style="font-size: 2rem; margin-right:10px;"></i> Datos Personales
+          </ng-template>
+          <ng-template pTemplate="subtitle">
+            Ingrese su información personal
+          </ng-template>
+          <div>
+            <div class="field">
               <label for="firstname">Nombres</label>
-              <b>{{ solicitudForm.value.nombres }}</b>
+              <!-- <input type="text" id="firstname" formControlName="nombres" pInputText> -->
+              <input type="text" id="firstname" formControlName="nombres" [pKeyFilter]="letrasEspacio" pInputText>
+              <!-- <small class="p-error" *ngIf="campoValidando('nombres')">El nombre es requerido.</small> -->
+              <small class="p-error" *ngIf="campoValidando('nombres')">El nombre es
+                requerido.</small>
             </div>
-
             <div class="field">
               <label for="lastname">Apellidos</label>
-              <b>{{ solicitudForm.value.apellidos }}</b>
-            </div> -->
-
-            <div class="field">
-              <label for="lastname">Nombres</label>
-              <b>{{ solicitudForm.value.nombres }} {{ solicitudForm.value.apellidos }}</b>
+              <input type="text" id="lastname" formControlName="apellidos" [pKeyFilter]="letrasEspacio" pInputText>
+              <small class="p-error" *ngIf="campoValidando('apellidos')">Los apellidos son requeridos.</small>
             </div>
-
-
             <div class="field">
               <label for="age">Edad</label>
-              <b>{{ solicitudForm.value.edad }}</b>
+              <input id="age" formControlName="edad" type="number" min="0" max="160" pInputText>
+              <small class="p-error" *ngIf="campoValidando('edad')">La edad es requerida.</small>
             </div>
-
           </div>
+          <ng-template pTemplate="footer">
+            <div class="buttonFooter">
+              <p-button label="Siguiente" icon="pi pi-angle-right" iconPos="right" (onClick)="nextCard(0)"></p-button>
+            </div>
+          </ng-template>
+        </p-card>
 
-          <div class="emailCel">
+        <p-card styleClass="cardStepsContact" *ngIf="authService.stepSoliIndex == 1">
+          <ng-template pTemplate="title">
+            <i class="pi pi-phone" style="font-size: 2rem; margin-right:10px;"></i> Datos de Contacto
+          </ng-template>
+          <ng-template pTemplate="subtitle">
+            Ingrese sus datos para que nos contactemos con usted
+          </ng-template>
+          <div>
+
             <div class="field">
-              <div><i class="pi pi-envelope" style="margin-right: 10px;"></i> <label for="email">Correo</label></div>
-              <b>{{ solicitudForm.value.email }}</b>
-              <b *ngIf="solicitudForm.value.email === null">-</b>
-              <!-- <b *ngIf="solicitudForm.value.email !== '' ">-</b> -->
-
+              <div><i class="pi pi-envelope" style="margin-right: 10px;"></i> <label for="email">Correo
+                  (opcional)</label>
+              </div>
+              <input id="email" formControlName="email" type="email" pInputText>
+              <small class="p-error" *ngIf="campoValidando('email')">El correo es requerido y debe ser válido.</small>
             </div>
             <div class="field">
               <div><i class="pi pi-tablet" style="margin-right: 10px;"></i> <label for="celular">Celular</label></div>
-              <b>{{ solicitudForm.value.celular }}</b>
+              <!-- <label for="celular">Celular</label> -->
+              <!-- <input id="celular" type="number" pInputText> -->
+              <input type="text" id="celular" maxlength="8" styleClass="txtCelular" formControlName="celular"
+                [pKeyFilter]="celular" [pValidateOnly]="true" pInputText>
+
+              <!-- <input id="celular" styleClass="txtCelular" formControlName="celular" [pKeyFilter]="celular" pInputText> -->
+
+              <!-- <p-inputMask styleClass="txtCelular" formControlName="celular" mask="99-aa" characterPattern="[А-Яа-я]">
+              </p-inputMask> -->
+
+              <small class="p-error" *ngIf="campoValidando('celular')">El celular es requerido y debe ser
+                válido.</small>
+            </div>
+
+            <div class="field">
+              <div class="tipoContactoTitle"><label>¿Como pregieres que te contactemos?</label></div>
+              <div class="tipoContacts">
+                <div class="field-checkbox">
+                  <!-- <p-checkbox name="group1" formControlName="contactTelefono" value="true" inputId="tel"></p-checkbox> -->
+                  <p-checkbox formControlName="contactTelefono" [binary]="true" inputId="tel"></p-checkbox>
+                  <label for="tel">LLamada Telefónica</label>
+                </div>
+                <div class="field-checkbox">
+                  <!-- <p-checkbox name="group2" formControlName="contactWsp" value="true" inputId="wsp"></p-checkbox> -->
+                  <p-checkbox formControlName="contactWsp" [binary]="true" inputId="wsp"></p-checkbox>
+                  <label for="wsp">Whatsapp</label>
+                </div>
+                <div class="field-checkbox">
+                  <!-- <p-checkbox name="group3" formControlName="contactEmail" value="true" inputId="em"></p-checkbox> -->
+                  <p-checkbox formControlName="contactEmail" [binary]="true" inputId="em"></p-checkbox>
+                  <label for="em">Correo Electrónico</label>
+                </div>
+              </div>
             </div>
           </div>
+          <ng-template pTemplate="footer">
+            <div class="buttonFooterContacto">
+              <p-button label="Anterior" icon="pi pi-angle-left" (onClick)="backCard(1)"></p-button>
+              <!-- <p-button label="Next" icon="pi pi-angle-right" iconPos="right"></p-button> -->
+              <p-button label="Siguiente" icon="pi pi-angle-right" iconPos="right" (onClick)="nextCard(1)"></p-button>
+            </div>
+          </ng-template>
+        </p-card>
 
-
-          <div class="field">
-            <div><label>Forma de Contacto</label></div>
-
-
-
-            <b>
-              <span *ngIf="solicitudForm.value.contactTelefono == true" style="margin-right: 40px">Llamada
-                Telefónica</span>
-              <span *ngIf="solicitudForm.value.contactWsp == true" style="margin-right: 40px">Whatsapp</span>
-              <span *ngIf="solicitudForm.value.contactEmail == true" style="margin-right: 40px">Correo
-                Electrónico</span>
-            </b>
-
-          </div>
-
-          <p-divider></p-divider>
-
+        <!-- <p-dropdown inputId="class" [options]="tratamientos" optionLabel="name" placeholder="Select a Class">
+        </p-dropdown>
+   -->
+        <p-card styleClass="cardStepsCita" *ngIf="authService.stepSoliIndex == 2">
+          <ng-template pTemplate="title">
+            <i class="pi pi-calendar" style="font-size: 2rem; margin-right:10px;"></i> Datos de Solicitud
+          </ng-template>
+          <ng-template pTemplate="subtitle">
+            Ingrese los datos de solicitud para la cita
+          </ng-template>
           <div class="field">
             <div><i class="pi pi-list" style="margin-right: 10px;"></i> <label for="fecha">Tratamiento</label></div>
-            <b *ngIf="(solicitudForm.value.tratamiento.name).length > 0">{{ solicitudForm.value.tratamiento.name }}</b>
+            <!-- <input id="fecha" type="fecha" pInputText> -->
+            <p-dropdown [options]="tratamientos" formControlName="tratamiento" placeholder="Seleccione un tratamiento"
+              optionLabel="name" scrollHeight="330px" [showClear]="true">
+            </p-dropdown>
+            <!-- <p-dropdown inputId="class" [options]="tratamientos" optionLabel="name" placeholder="Select a Class">
+            </p-dropdown> -->
+            <small class="p-error" *ngIf="campoValidando('tratamiento')">El tratamiento es requerido.</small>
           </div>
-
-          <div class="fechaHora">
+          <div class="solicitudDates">
             <div class="field">
               <div><i class="pi pi-calendar-plus" style="margin-right: 10px;"></i> <label for="fecha">Fecha</label>
               </div>
-              <b>{{ solicitudForm.value.fecha | date:'shortDate' }}</b>
+              <!-- <input id="fecha" type="fecha" pInputText> -->
+              <!-- <p-calendar formControlName="fecha" [minDate]="minDate" [maxDate]="maxDate" [readonlyInput]="true"
+                inputId="min-max"></p-calendar> -->
+              <p-calendar formControlName="fecha" [disabledDays]="[0]" [touchUI]="true" [minDate]="manana"
+                dateFormat="mm-dd-yy" [readonlyInput]="true" inputId="touchui" styleClass="txtFecha"></p-calendar>
+              <small class="p-error" *ngIf="campoValidando('fecha')">La fecha es requerida.</small>
             </div>
             <div class="field">
               <div><i class="pi pi-clock" style="margin-right: 10px;"></i> <label for="hora">Hora</label></div>
+              <!-- <input id="hora" type="number" pInputText> -->
+              <!-- <input pInputText type="date" name="fecha_cita" min="15/11/2022"> -->
 
-              <b *ngIf="(solicitudForm.value.hora).length == 5 ">{{ solicitudForm.value.hora }}</b>
-              <b *ngIf="(solicitudForm.value.hora).length !== 5 ">{{ solicitudForm.value.hora | date:'h:mm a' }}</b>
+              <!-- <input pInputText type="time" formControlName="hora" name="hora_cita" class="form-control"
+                placeholder="Hora" min="15:00" max="21:00"> -->
 
+              <p-calendar [baseZIndex]="10" formControlName="hora" [timeOnly]="true" [showTime]="true" hourFormat="24"
+                inputId="timeonly" styleClass="txtHora" aria-valuenow="" [stepMinute]="10">
+              </p-calendar>
+
+              <!-- <input pInputText type="time" name="hora_cita" placeholder="Hora" min="15:00" max="21:00"> -->
+              <small class="p-error" *ngIf="campoValidando('hora')">El hora es requerida.</small>
             </div>
           </div>
-
-          <div class="termConditions">
-            <div class="field-checkbox">
-              <!-- <p-checkbox name="group2" formControlName="contactWsp" value="true" inputId="wsp"></p-checkbox> -->
-
-              <!-- <p-checkbox [ngModel]="termConditions" [binary]="true" inputId="termCon"></p-checkbox> -->
-              <!-- <p-checkbox [(ngModel)]="termConditions" [binary]="true" inputId="termCon"></p-checkbox> -->
-              <p-checkbox formControlName="condiciones" [binary]="true" inputId="termCon"></p-checkbox>
-
-              <label for="termCon">Acepto los términos y condiciones de sus <a
-                  (click)="showCondicionesModal=true">Políticas de Privacidad</a></label>
+          <ng-template pTemplate="footer">
+            <div class="buttonFooterContacto">
+              <p-button label="Anterior" icon="pi pi-angle-left" (onClick)="backCard(2)"></p-button>
+              <!-- <p-button label="Next" icon="pi pi-angle-right" iconPos="right"></p-button> -->
+              <!-- <button pButton label="Siguiente" icon="pi pi-angle-right" iconPos="right" (onClick)="nextCard(2)"></button> -->
+              <p-button type="submit" label="Siguiente" icon="pi pi-angle-right" iconPos="right"
+                (onClick)="nextCard(2)">
+              </p-button>
             </div>
-          </div>
-          <div style="text-align:center;">
-            <small class="p-error" *ngIf="campoValidando('condiciones')">Es necesario aceptar
-              los términos y
-              condiciones.</small>
+          </ng-template>
+        </p-card>
+
+        <p-card styleClass="cardStepsConfirm" *ngIf="authService.stepSoliIndex == 3">
+
+          <ng-template pTemplate="title">
+            <i class="pi pi-check" style="font-size: 2rem; margin-right:10px;"></i> Confirmación
+          </ng-template>
+
+          <ng-template pTemplate="subtitle">
+            Confirma todos tus datos para que la solicitud sea enviada y nos contactemos con usted
+          </ng-template>
+
+          <div>
+
+
+            <div class="nomAp">
+
+              <!-- <div class="field">
+                <label for="firstname">Nombres</label>
+                <b>{{ solicitudForm.value.nombres }}</b>
+              </div>
+  
+              <div class="field">
+                <label for="lastname">Apellidos</label>
+                <b>{{ solicitudForm.value.apellidos }}</b>
+              </div> -->
+
+              <div class="field">
+                <label for="lastname">Nombres</label>
+                <b>{{ solicitudForm.value.nombres }} {{ solicitudForm.value.apellidos }}</b>
+              </div>
+
+
+              <div class="field">
+                <label for="age">Edad</label>
+                <b>{{ solicitudForm.value.edad }}</b>
+              </div>
+
+            </div>
+
+            <div class="emailCel">
+              <div class="field">
+                <div><i class="pi pi-envelope" style="margin-right: 10px;"></i> <label for="email">Correo</label></div>
+                <b>{{ solicitudForm.value.email }}</b>
+                <b *ngIf="solicitudForm.value.email === null">-</b>
+                <!-- <b *ngIf="solicitudForm.value.email !== '' ">-</b> -->
+
+              </div>
+              <div class="field">
+                <div><i class="pi pi-tablet" style="margin-right: 10px;"></i> <label for="celular">Celular</label></div>
+                <b>{{ solicitudForm.value.celular }}</b>
+              </div>
+            </div>
+
+
+            <div class="field">
+              <div><label>Forma de Contacto</label></div>
+
+
+
+              <b>
+                <span *ngIf="solicitudForm.value.contactTelefono == true" style="margin-right: 40px">Llamada
+                  Telefónica</span>
+                <span *ngIf="solicitudForm.value.contactWsp == true" style="margin-right: 40px">Whatsapp</span>
+                <span *ngIf="solicitudForm.value.contactEmail == true" style="margin-right: 40px">Correo
+                  Electrónico</span>
+              </b>
+
+            </div>
+
+            <p-divider></p-divider>
+
+            <div class="field">
+              <div><i class="pi pi-list" style="margin-right: 10px;"></i> <label for="fecha">Tratamiento</label></div>
+              <b
+                *ngIf="(solicitudForm.value.tratamiento.name).length > 0">{{ solicitudForm.value.tratamiento.name }}</b>
+            </div>
+
+            <div class="fechaHora">
+              <div class="field">
+                <div><i class="pi pi-calendar-plus" style="margin-right: 10px;"></i> <label for="fecha">Fecha</label>
+                </div>
+                <b>{{ solicitudForm.value.fecha | date:'shortDate' }}</b>
+              </div>
+              <div class="field">
+                <div><i class="pi pi-clock" style="margin-right: 10px;"></i> <label for="hora">Hora</label></div>
+
+                <b *ngIf="(solicitudForm.value.hora).length == 5 ">{{ solicitudForm.value.hora }}</b>
+                <b *ngIf="(solicitudForm.value.hora).length !== 5 ">{{ solicitudForm.value.hora | date:'h:mm a' }}</b>
+
+              </div>
+            </div>
+
+            <div class="termConditions">
+              <div class="field-checkbox">
+                <!-- <p-checkbox name="group2" formControlName="contactWsp" value="true" inputId="wsp"></p-checkbox> -->
+
+                <!-- <p-checkbox [ngModel]="termConditions" [binary]="true" inputId="termCon"></p-checkbox> -->
+                <!-- <p-checkbox [(ngModel)]="termConditions" [binary]="true" inputId="termCon"></p-checkbox> -->
+                <p-checkbox formControlName="condiciones" [binary]="true" inputId="termCon"></p-checkbox>
+
+                <label for="termCon">Acepto los términos y condiciones de sus <a
+                    (click)="showCondicionesModal=true">Políticas de Privacidad</a></label>
+              </div>
+            </div>
+            <div style="text-align:center;">
+              <small class="p-error" *ngIf="campoValidando('condiciones')">Es necesario aceptar
+                los términos y
+                condiciones.</small>
+            </div>
+
           </div>
 
+          <ng-template pTemplate="footer">
+            <div class="buttonFooterConfirm">
+              <p-button label="Anterior" icon="pi pi-angle-left" (onClick)="backCard(3)"></p-button>
+              <button pButton pRipple type="button" label="Enviar Solicitud" icon="pi pi-angle-right" iconPos="right"
+                class="p-button-success" (click)="guardarSolicitud()"></button>
+            </div>
+          </ng-template>
+
+        </p-card>
+
+      </div>
+
+
+      <!-- <p-card>
+        <button pButton (click)="authService.stepSoliIndex = 0">0</button>
+        <button pButton (click)="authService.stepSoliIndex = 1">1</button>
+        <button pButton (click)="authService.stepSoliIndex = 2">2</button>
+        <button pButton (click)="authService.stepSoliIndex = 3">3</button>
+        <button pButton (click)="showCondicionesModal=true">Cond</button>
+        <br>
+  
+        {{ solicitudForm.value | json }}
+        <hr>
+        {{ solicitudForm.valid }}
+        <hr>
+        {{ termConditions }}
+      </p-card> -->
+
+
+    </div>
+  </div>
+
+
+</section>
+
+
+
+
+
+<!-- FOOTER -->
+
+<!-- <app-footer></app-footer> -->
+
+<footer class="footer">
+
+  <!-- <div class="svgFooterDivFooter">
+    <svg class="svgReservaCitaFooter" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+      viewBox="0 0 1440 320" style="height: 100%; width: 100%;" transform="rotate(180)">
+      <path fill="" fill-opacity="1"
+        d="M0,160L60,149.3C120,139,240,117,360,133.3C480,149,600,203,720,192C840,181,960,107,1080,85.3C1200,64,1320,96,1380,112L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+      </path>
+    </svg>
+  </div> -->
+
+
+
+  <div class="container contenedorFooter">
+
+    <div class="col1">
+      <div class="imgLogo">
+
+        <div class="imgfooterLogo">
+          <img src="assets/img/LOGO-A1-2.png" alt="" height="95px">
+        </div>
+        <div class="nameEBS">
+          <!-- <span>CONSULTORIO DENTAL</span>
+              <span>"EL BUEN SAMARITANO"</span> -->
+          <span>
+            CONSULTORIO DENTAL <b>"EL <a routerLink="reserva-cita">BUEN</a> SAMARITANO"</b>
+          </span>
+          <br>
+          <span class="cityCol1">El Alto - La Paz - Bolivia</span>
         </div>
 
-        <ng-template pTemplate="footer">
-          <div class="buttonFooterConfirm">
-            <p-button label="Anterior" icon="pi pi-angle-left" (onClick)="backCard(3)"></p-button>
-            <button pButton pRipple type="button" label="Enviar Solicitud" icon="pi pi-angle-right" iconPos="right"
-              class="p-button-success" (click)="guardarSolicitud()"></button>
-          </div>
-        </ng-template>
+      </div>
 
-      </p-card>
+      <!-- <div class="cityFooter">
+          <span>El Alto - La Paz - Bolivia</span>
+        </div> -->
 
     </div>
 
+    <div class="col2">
+      <div class="follow">Siguenos en:</div>
+      <div class="imgSocial">
+        <img class="imgFacebook" src="assets/img/web/fb.png" alt="" height="81px">
+        <img class="imgWhatsapp" src="assets/img/web/ws.png" alt="" height="81px">
+        <img class="imgTwitter" src="assets/img/web/twt.png" alt="" height="81px">
+      </div>
 
-    <!-- <p-card>
-      <button pButton (click)="authService.stepSoliIndex = 0">0</button>
-      <button pButton (click)="authService.stepSoliIndex = 1">1</button>
-      <button pButton (click)="authService.stepSoliIndex = 2">2</button>
-      <button pButton (click)="authService.stepSoliIndex = 3">3</button>
-      <button pButton (click)="showCondicionesModal=true">Cond</button>
-      <br>
-
-      {{ solicitudForm.value | json }}
-      <hr>
-      {{ solicitudForm.valid }}
-      <hr>
-      {{ termConditions }}
-    </p-card> -->
-
+    </div>
 
   </div>
-</div>
+
+
+  <div class="footerDown">
+    © Copyright 2023 | Created by AMC
+  </div>
+</footer>
+
+<!-- END FOOTER -->
+
 
 <!-- DIALOG MOSTRANDO TERMINOS Y CONDICIONES - POLITICAS DE PRIVACIDAD -->
 

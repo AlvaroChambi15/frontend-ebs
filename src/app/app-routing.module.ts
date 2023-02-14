@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import { DesignComponent } from './design/design.component';
 import { Notfound404Component } from './errors/notfound404/notfound404.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -37,8 +37,14 @@ const routes: Routes = [
   { path: '**', redirectTo: 'noexiste' }
 ];
 
+const routerOptions: ExtraOptions = {
+  scrollPositionRestoration: 'enabled',
+  anchorScrolling: 'enabled',
+}
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: false })],
+  // imports: [RouterModule.forRoot(routes, { useHash: false })],
+  imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

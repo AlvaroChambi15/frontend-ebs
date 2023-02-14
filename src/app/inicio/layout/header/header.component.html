@@ -11,6 +11,7 @@
         <a class="enlace">
           <!-- <img src="./assets/img/LOGO-A3.png" alt="logo" class="logo"> -->
           <img src="./assets/img/LOGO-A1-2.png" alt="logo" class="logo">
+
           <div class="nameEBS">
             <!-- <span>CONSULTORIO DENTAL</span>
               <span>"EL BUEN SAMARITANO"</span> -->
@@ -18,14 +19,16 @@
               CONSULTORIO DENTAL <b>"EL <a routerLink="reserva-cita">BUEN</a> SAMARITANO"</b>
             </label>
           </div>
+
         </a>
         <ul class="titlesMenu">
           <!-- <li><a class="active" href="#">Inicio</a></li> -->
           <li><a class="txtTitle1" routerLink="/">Inicio</a></li>
-          <li><a class="txtTitle2" routerLink="/">Tratamientos</a></li>
-          <li><a class="txtTitle3" routerLink="/">Contactos</a></li>
+          <li><a class="txtTitle2" (click)="scroll('Tratamientos')">Tratamientos</a></li>
+          <li><a class="txtTitle3" (click)="scroll('Contacto')">Contacto</a></li>
           <!-- <li><a class="txtTitle4" href="#">U.T.</a></li> -->
-          <li *ngIf="authService.btnReservarWeb"><a class="txtTitle4" routerLink="/reserva-cita">RESERVAR
+          <!-- <li *ngIf="authService.btnReservarWeb"><a class="txtTitle4" routerLink="/reserva-cita">RESERVAR -->
+          <li *ngIf="authService.btnReservarWeb"><a class="txtTitle4" (click)="scroll('Reserva')">RESERVAR
               CITA</a></li>
           <!-- <li>
               <div class="container-userBtn">

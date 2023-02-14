@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { CargarScriptsService } from 'src/app/cargar-scripts.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import Swal from 'sweetalert2';
 import * as AOS from 'aos';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-web',
@@ -11,12 +12,18 @@ import * as AOS from 'aos';
   styleUrls: ['./web.component.scss'],
   providers: [MessageService]
 })
+
 export class WebComponent implements OnInit {
 
+  @ViewChild('elemento') tratamiento: HTMLElement | undefined;
+
+
   constructor(
+    private renderer2: Renderer2,
     private _cargarScript: CargarScriptsService,
     public authService: AuthService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: Router
   ) {
     // _cargarScript.carga(["menu"]);
   }
@@ -42,6 +49,16 @@ export class WebComponent implements OnInit {
       showConfirmButton: true,
       timer: 15000
     })
+  }
+
+
+
+  scroll(part: string) {
+    this.router.navigateByUrl('#' + part);
+  }
+
+  goToReserva() {
+    this.router.navigate(['/reserva-cita']);
   }
 
 

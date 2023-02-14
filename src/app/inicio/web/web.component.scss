@@ -67,7 +67,7 @@
     font-family: "Agency FB", sans-serif;
     font-weight: bold;
     text-align: center;
-    margin: 30px 0 30px 0;
+    margin: 0 0 10px 0;
 }
 
 
@@ -136,7 +136,7 @@
     background-position-x: 100%;
     position: relative;
     z-index: 1;
-    padding-bottom: 50px;
+    padding-bottom: 230px;
 }
 
 .reserva::before{
@@ -152,7 +152,7 @@
 
 .reserva .tituloSection{
     color: #ffe91f;
-    margin-top: 50px !important;
+    // margin-top: 70px !important;
 
     span{
         font-size: 60px !important;
@@ -188,7 +188,11 @@
     text-align: center;
     border-radius: 10px;
 
+    transition: all 400ms ease;
+
     margin: 50px 0 50px 0;
+
+    cursor: pointer;
 
     span{
         font-weight: bold;
@@ -196,11 +200,75 @@
     }
 }
 
+.reserva .btnReservarCita:hover{
+    background: #fff;
+    color: #000;
+    transform: scale(1.1,1.1);
+}
 
 
 
+// VISION - MISION
+
+.testimony .testimony__item .testimony__name{
+    font-family: "Agency FB", sans-serif;
+
+    margin: 0;
+}
+
+.testimony .visionIcon{
+
+    width: 100px;
+    margin-right: 25px;
+
+    img{
+        width: 100%;
+    }
+}
 
 
+
+// CONTACT
+
+.contact-svg {
+    /* position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;  */
+    bottom: 0;
+    width: 100%;
+}
+.contact-svg svg {
+    /* position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 190px;
+    width: 100%;
+    stroke: none;
+    fill: #fff;  */
+
+}
+
+.svgReservaCitaDiv{
+    height: 230px;
+}
+.svgReservaCita{
+    fill: #f8ffff;
+}
+
+.svgContactDive{
+    height: 230px;
+}
+
+.svgContact{
+    fill: #f8ffff;
+    width: 100%;
+    height: 230px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 
 
 
@@ -358,15 +426,17 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 200px; }
-    .hero .hero-svg svg {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 190px;
-      width: 100%;
-      stroke: none;
-      fill: #fff; }
+    height: 200px; 
+}
+.hero .hero-svg svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 190px;
+    width: 100%;
+    stroke: none;
+    fill: #fff; 
+}
 
     
 /* ABOUT */
@@ -419,9 +489,10 @@
 
     // background: #fff;
     padding-top: 0;
-    padding-bottom: 100px;
+    // padding-bottom: 100px;
 
     margin-top: -12px;
+    padding-bottom: 20px;
 }
 
 .presentation .grid-containerP{
@@ -748,20 +819,24 @@
 
 
 .projects{
-/* background: #f2f2f2; */
+    // background: #f2f2f2;
+    display: grid;
+    justify-items: center;
+    background: #f8ffff;
+
     // background-image: linear-gradient(180deg, #02152b56 0%, #02152b00 100%), url('./../../../../assets/img/FondoFrases.jpg');
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     position: relative;
-    z-index: 1;
+    z-index: 1; */
 
-    padding: 80px 0;
-    padding-bottom: 150px;
+    // padding: 80px 0;
+    padding-bottom: 50px;
 }
 
-.projects::before{
+/* .projects::before{
     position: absolute;
     content: '';
     top: 0;
@@ -770,172 +845,111 @@
     right: 0;
     background-color: #02152bb4;
     z-index: -1;
-}
-
-.projects .subtitle{
-    font-size: 45px;
-    text-align: center;
-    margin-bottom: 15px;
-    margin-top: 41px;
-}
-
-.projects .container .docente{
-    text-align: center;
-    color: #fff;
-    font-size: 18px;
-    margin: 25px 0;
-}
-
-
-.projects .radius-divider{
-    color: white;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 80px;
-
-    /* border: 1px solid rgb(161, 220, 235); */
-}
-
-.projects .radius-divider .divider{
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin: 0 2px;
-    background-color: #293347;
-}
-
-.projects .radius-divider .divider1{
-    transform: scale(0.9);
-}
-
-.projects .radius-divider .divider2{
-    transform: scale(0.7);
-    background-color: #28d5a7;
-}
-
-.projects .radius-divider .divider3{
-    transform: scale(0.5);
-    background-color: #f9b851;
-}
-
-
-/* .projects .card{
-    border-radius: 72px;
-    background: #ffffff;
-    box-shadow:  -15px -15px 30px #b8b8b8,
-             15px 15px 30px #ffffff;
 } */
 
-.projects .card{
-    margin: auto;
+.projects .tituloContacto{
+    text-align: center;
+    font-family: "Agency FB", sans-serif;
+    color: #f44336;
+    font-weight: bold;
+    font-size: 60px;
 
-    width: 94%;
-    height: 300px;
+    margin-top: -40px;
+    z-index: 1;
+    position: absolute;
+}
+
+.projects .container{
     display: flex;
-    /* justify-content: center; */
-    overflow: hidden;
-    background-color: #293855;
-    /* box-shadow: 0 5px 10px #033f49; */
-    box-shadow: 0 0 4px 5px #ffffff57;
-    border-radius: 10px;
-    transition: 0.1s;
-    margin-bottom: 50px;
-    /* border: 7px solid rgb(151, 142, 142); */
-    /*  */
-    /* flex-direction: row-reverse; */
-    /*  */
+    justify-content: space-evenly;
+    padding-top: 90px;
+    padding-bottom: 20px;
+    flex-direction: row-reverse;
 }
 
-.projects .card:hover{
-    transform: scale(1.02);
-    box-shadow: 0 0 15px 6px #acf5ff;
+.projects .here{
+    margin-bottom: 10px;
+
+    span{
+        font-family: "Agency FB", sans-serif;
+        color: #000;
+        font-size: 30px;
+        margin-right: 15px;
+        font-weight: bold;
+    }
+
+    svg{
+        margin-top: -10px;
+    }
 }
 
-.projects .card .img-card{
-    /* TODO: Esta imagen de la tarjeta se debe poner desde html // Asi tambien se debe poder cambiar el color a elección*/
-    // background: url(https://drive.google.com/uc?export=download&id=1nb8MpQyD2ga_ifFL4po76DLg7ZxAvvoq);
-
+.projects .googleMaps{
+    // width: 500px;
     width: 50%;
-    // height: 100%;
-    // background-size: cover;
-    // background-position: center center;
+    height: 500px;
+    text-align: center;
 }
 
-.projects .card .content{
-    width: 50%;
-    height: 100%;
+.projects .container .textoContent{
+    text-align: center;
     display: grid;
-    grid-template-rows: 25px auto 50px;
-    padding: 35px 30px;
-    text-align: center;
-}
-
-.guardandoUT{
-    width: 100%;
-    height: 100vh;
-    display: flex;
+    // width: 430px;
+    width: 50%;
     justify-content: center;
-    align-items: center;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(0,0,0,0.5);
-    transition: all 500ms;
-
-    z-index: 1102;
+    align-content: center;
+    flex-wrap: wrap;
+    padding: 0 80px 0 0;
 }
 
-/* .card .content .title{
-    height: 100%;
-} */
-
-.projects .card .content .text span{
-    // color: #71d3ff;
-    color: #ffeb3b;
+.projects .container .nombreDoc{
+    font-family: "Agency FB", sans-serif;
+    color: #000;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 35px;
 }
 
-.projects .card .content .title span{
-    color: #ffffff;
-    font-size: 25px;
-    margin: auto;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+.projects .container .celularContact{
+
+    margin: 20px 0 20px 0;
+
+    svg{
+        margin: -16px 10px 0 0;
+    }
+
+    span{
+        font-family: "Agency FB", sans-serif;
+        color: #000;
+        font-weight: bold;
+        font-size: 35px
+    }
 }
 
-.projects .card .content .text{
-    margin: auto;
+.projects .container .direccionContact span{
+
+    font-family: "Agency FB", sans-serif;
+    color: #000;
+    font-size: 30px;
 }
 
-.projects .card .content .text p{
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 15px;
+.projects .container .horarioContact {
+
+    margin-top: 15px;
+
+    background: #ffeb78;
+    padding: 20px;
+    border-radius: 20px;
+    border: solid 5px #ffeb78;
+
+    svg{
+        // margin-top: 10px;
+        margin: -15px 10px 0 0;
+    }
+    span{
+        font-family: "Agency FB", sans-serif;
+    color: #000;
+    font-size: 30px;
+    }
 }
-
-.projects .card .content .btn-container button{
-    background: #ff6424e8;
-    width: 80%;
-    height: 100%;
-    padding: 5px 10px;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-}
-
-.projects .card .content .btn-container button:hover{
-    background: #fff;
-    color: #ff6424e8;
-    
-    transition: .4s;
-}
-
-
-
 
 
 
@@ -959,7 +973,35 @@
 
 
     /* background: linear-gradient(180deg, #0074f856 0%, #00000000 100%); */
-    background: radial-gradient(farthest-corner at 305px 117px, #0d0825 15%, #3f51b5 95%)
+
+    // background: radial-gradient(farthest-corner at 305px 117px, #0d0825 15%, #3f51b5 95%)
+
+    // sdgfdgs
+
+}
+
+.testimony{
+    background-image: linear-gradient(180deg, #02152b56 0%, #02152b00 100%), url('./../../../assets/img/web/consultorio.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-attachment: fixed;
+    background-position: center;
+    background-position-x: 100%;
+    position: relative;
+    z-index: 1;
+    padding-top: 90px;
+    padding-bottom: 40px;
+}
+
+.testimony::before{
+    position: absolute;
+    content: '';
+    top: 0; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #607d8bc2;
+    z-index: -1;
 }
 
 /* .testimony::before{
@@ -982,7 +1024,9 @@
     width: 100%;
     
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    // grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    // grid-template-rows: 1fr 1fr;
     gap: 30px;
 }
 
@@ -991,16 +1035,18 @@
     margin: 0 auto;
     /* background: var(--color-secondary); */
     /* background: #305399; */
-    background: rgb(255 255 255 / 24%);
+    // background: rgb(255 255 255 / 24%);
+    background: #fefefea6;
     box-shadow: 0 8px 10px rgba(66,66,66, .5);
     border-radius: 7px;
-    padding: 30px 25px;
+    padding: 30px 30px;
     color: #fff;
     margin-bottom: 50px;
 }
 
 .testimony__person{
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-bottom: 20px;
 }
@@ -1021,8 +1067,10 @@
 }
 
 .testimony__name{
-    font-size: 1.4rem;
+    font-size: 3rem;
     margin-bottom: 10px;
+    font-weight: bold;
+    color: black;
 }
 
 .testimony__verification{
@@ -1032,6 +1080,8 @@
 
 .testimony__review{
     font-weight: 300;
+    color: black;
+    text-align: center;
 }
 
 /* FOOTER */
@@ -1085,8 +1135,9 @@
 
 /* FOOTER NEW */
 
+/* 
 .footer{
-    /* background: var(--color-primary); */
+    // background: var(--color-primary);
     background: #0D0825;
 
     padding-top: 101px;
@@ -1095,7 +1146,7 @@
 
 .grid-container{
     display: grid;
-    /* background-color: #272727; */
+    // background-color: #272727;
 
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 180px 60px 85px;
@@ -1109,11 +1160,11 @@
 }
 
 .grid-container div{
-    /* background-color: midnightblue; */
-    /* text-align: center; */
+    // background-color: midnightblue;
+    // text-align: center;
     color: white;
-    /* padding: 10px; */
-    /* border: 1px solid rgb(161, 220, 235); */
+    // padding: 10px;
+    // border: 1px solid rgb(161, 220, 235);
 }
 
 .logo__footer{
@@ -1145,7 +1196,7 @@ footer p{
 }
 
 .foot__links li a{
-    /* background-color: #293347; */
+    // background-color: #293347;
     color: white;
     width: 40px;
     height: 40px;
@@ -1227,7 +1278,7 @@ footer p{
 
 .item5{
     grid-area: line;
-    /* z-index: 5; */
+    // z-index: 5;
 }
 
 .footer .grid-container .footer__line{
@@ -1244,9 +1295,9 @@ footer p{
 .footer .copy-right {
     text-align: center;
     color: #f6f8f9;
-    /* font-weight: 500; */
-    /* position: relative; */
-    /* margin-top: 50px; */
+    // font-weight: 500;
+    // position: relative;
+    // margin-top: 50px;
     padding-top: 60px;
 }
 
@@ -1254,6 +1305,133 @@ footer p{
     margin: 0;
     font-size: 13px;
 }
+
+ */
+
+
+/*  .svgFooterDivWeb{
+    // background-color: green;
+    height: 100px;
+    width: 100%;
+    // position: absolute;
+    bottom: 97px;
+    position: relative;
+    z-index: 10;
+}
+
+.svgFooterDivWeb .svgReservaCita{
+    fill: #151414;
+} */
+
+
+
+/* FOOTER NEW */
+
+.footer{
+    /* background: var(--color-primary); */
+    background: #151414;
+
+    // padding-top: 101px;
+    // padding-bottom: 60px;
+}
+
+
+/* ===================== */
+
+ .svgFooterDivFooter{
+    // background-color: green;
+    height: 100px;
+    width: 100%;
+    // position: absolute;
+    bottom: 0;
+    position: absolute;
+    z-index: 10;
+}
+
+ .svgReservaCitaFooter{
+    fill: #151414;
+}
+
+/* ===================== */
+
+.footer .contenedorFooter{
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+
+.footer .footerDown{
+    background: #000;
+}
+
+.footer .col1{
+    width: 50%;
+    // font-family: "Agency FB", sans-serif;
+    color: white;
+    font-size: 25px;
+    // text-align: center;
+    display: grid;
+}
+
+.footer .col1 .imgLogo{
+    display: flex;
+    align-items: center;    
+}
+
+.footer .col1 .nameEBS{
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    width: 219px;
+    font-weight: 600;
+    // -webkit-text-stroke: 0.7px black;
+    margin-left: 30px;
+    
+    a{
+        color: white;
+        cursor: default;
+        -webkit-text-stroke: 0.7px black;
+    }
+}
+
+.footer .col1 .cityCol1{
+    font-weight: 100;
+    font-family: system-ui;
+}
+
+.footer .col1 .cityFooter{
+    margin-top: 30px;
+    font-size: 15px;
+    padding-left: 70px;
+}
+
+.footer .col2{
+    width: 50%;
+    display: grid;
+    justify-items: center;
+}
+
+.footer .col2 .follow{
+    font-family: "Agency FB", sans-serif;
+    color: white;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.footer .imgWhatsapp{
+    padding: 0 10px;
+}
+
+.footer .footerDown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+    color: white;
+    font-size: 13px;
+    height: 90px;
+}
+
 
 
 
@@ -1271,6 +1449,8 @@ footer p{
     }    
 }
 
+
+
 @media screen and (max-width: 1020px){
 
     .hero-diente{
@@ -1281,6 +1461,27 @@ footer p{
             height: 100%;
         }
     }
+
+    .projects .container{
+        display: flex;
+        justify-items: center;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        padding-top: 70px;
+    }
+
+    .projects .container .googleMaps{
+        width: 100%;
+        margin-top: 50px;
+        height: 450px;
+    }
+
+    .projects .container .textoContent{
+        width: 100%;
+        padding: 0;
+    }
+
+
 
 }
 
@@ -1385,40 +1586,39 @@ footer p{
     /* END ABOUT SECTION */
 
 
+}
 
-    /* UNIDADES DE FORMACION */
-
-    .projects .card{
+@media screen and (max-width:960px){
+    
+    .reserva .contenidoReserva{
         display: grid;
-        height: auto;
+        justify-content: center;
+        justify-items: center;
     }
 
-    .projects .card .img-card{
+    .reserva .contenedorReserva .sectionText{
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width: 920px){
+
+    .footer .contenedorFooter{
+        display: grid;
+        justify-items: center;
         width: 100%;
-        height: 230px;
-        /* height: 230px; */
     }
 
-    .projects .card .content{
+    .footer .col1{
+        display: contents;
+        justify-items: center;
+    }
+
+    .footer .col2{
+        text-align: center;
         width: 100%;
-        grid-template-rows: 25px auto 50px;
-
+        margin-top: 20px;
     }
-
-    .projects .card .content .text{
-        margin: 50px 0;
-    }
-
-    .projects .card .content .text span{
-        // color: #026e5e;
-        color: #ffeb3b;
-        font-weight: bold;
-        font-size: 25px;
-        
-    }
-
-    /* END UNIDADES DE FORMACION */
-
 }
 
 @media screen and (max-width: 900px){
@@ -1595,6 +1795,13 @@ footer p{
     }
 }
 
+@media screen and (max-width: 644px){
+
+    /* .footer .imgTwitter{
+        margin-top: 10px;
+    } */
+}
+
 @media screen and (max-width: 570px){
     .presentation .item2 .info .info__redes .my__list{
         display: grid;
@@ -1607,6 +1814,11 @@ footer p{
     .hero-diente{
         right: 80px;
         height: 160px;
+    }
+
+    .reserva .contenidoReserva .sectionText{
+        width: 100%;
+
     }
 }
 
@@ -1755,6 +1967,21 @@ footer p{
         text-align: center;
     }
 
+    .testimony .testimony__person .visionIcon{
+        margin: 0 0 10px 0;
+    }
+
+    .testimony .testimony__item .testimony__review{
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 453px){
+
+    .footer .imgWhatsapp{
+        
+    }
 }
 
 @media screen and (max-width: 433px){
@@ -1825,6 +2052,17 @@ footer p{
     }
 }
 
+@media screen and (max-width: 390px){
+    .footer .col1 .imgLogo{
+        display: grid;
+        justify-items: center;
+    }
+
+    .footer .col1 .nameEBS{
+        margin-left: 0;
+    }
+}
+
 @media screen and (max-width: 360px){
     .cardTratamiento{
         margin: 0 0 45px 35px;
@@ -1835,11 +2073,34 @@ footer p{
     .cardTratamiento{
         margin: 0 0 45px 20px;
     }
+
+    .reserva .contenidoReserva .contenidoTexto{
+        justify-items: center;
+    }
+
+    .reserva .contenidoReserva .sectionText{
+        width: 70%;
+    }
+
 }
 
 @media screen and (max-width: 320px){
     .cardTratamiento{
         margin: 0 0 45px 7px;
+    }
+
+    .reserva .contenidoReserva .sectionImg{
+        display: flex;
+        justify-content: center;
+        img{
+            width: 200px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 284px){
+    .footer .imgTwitter{
+        margin-top: 10px;
     }
 }
 
