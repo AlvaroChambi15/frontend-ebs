@@ -25,6 +25,8 @@ export class PerfilComponent implements OnInit {
       },
       (error: any) => {
         console.log(error)
+
+        this.router.navigate(["/auth/login"]);
       }
     )
   }

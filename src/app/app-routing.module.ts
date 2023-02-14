@@ -8,26 +8,23 @@ import { ReservaComponent } from './inicio/reserva/reserva.component';
 import { WebComponent } from './inicio/web/web.component';
 
 const routes: Routes = [
+
   {
-    path: '', component: DesignComponent,
+    path: '',
+    component: WebComponent
+  },
+  {
+    path: 'reserva-cita',
+    component: ReservaComponent,
     children: [
-      {
-        path: '',
-        component: WebComponent
-      },
-      {
-        path: 'reserva-cita',
-        component: ReservaComponent,
-        children: [
-          { path: 'personal', component: PersonalComponent }
-        ]
-      },
-      {
-        path: 'auth',
-        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
-      }
+      { path: 'personal', component: PersonalComponent }
     ]
   },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
+
   {
     path: 'sisebs',
     loadChildren: () => import('./sisebs/sisebs.module').then(m => m.SisebsModule),
