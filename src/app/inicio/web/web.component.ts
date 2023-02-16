@@ -1,7 +1,8 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { CargarScriptsService } from 'src/app/cargar-scripts.service';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { ConfirmationService } from 'primeng/api';
 import Swal from 'sweetalert2';
 import * as AOS from 'aos';
 import { Router } from '@angular/router';
@@ -10,7 +11,8 @@ import { Router } from '@angular/router';
   selector: 'app-web',
   templateUrl: './web.component.html',
   styleUrls: ['./web.component.scss'],
-  providers: [MessageService]
+  encapsulation: ViewEncapsulation.None,
+  providers: [ConfirmationService, MessageService],
 })
 
 export class WebComponent implements OnInit {

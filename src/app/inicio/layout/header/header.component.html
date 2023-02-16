@@ -4,7 +4,7 @@
     <nav>
       <!-- <input type="checkbox" id="check"> -->
       <label for="check" class="checkBtn">
-        <img src="./assets/img/menu.svg" alt="menu" class="menu">
+        <img src="./assets/img/menu.svg" alt="menu" class="menu" (click)="openMenu()">
       </label>
 
       <div class="itemsMenu">
@@ -50,3 +50,23 @@
 
   </div><!-- end header-menu-wrapper -->
 </header>
+
+
+<!-- ======================================= -->
+
+<p-sidebar styleClass="menuHeader" [(visible)]="menuHeader" position="left">
+  <div class="menu">
+    <div class="item">
+      <span>INICIO</span>
+    </div>
+    <div class="item">
+      <span>TRATAMIENTOS</span>
+    </div>
+    <div class="item">
+      <span>CONTACTO</span>
+    </div>
+    <div class="item item4">
+      <span>RESERVAR CITA</span>
+    </div>
+  </div>
+</p-sidebar>

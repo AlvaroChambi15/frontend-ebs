@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+
+    background-image: linear-gradient(180deg, #02152b56 0%, #02152b00 100%), url('./../../../../assets/img/consultorioFondo3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-attachment: fixed;
+    background-position: center;
+    background-position-x: 100%;
+    position: relative;
+    z-index: 1;
+
+
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background: linear-gradient(to bottom right, #ff966d, #fa538d, #89379c);
+}
+
+.container {
+    width: 70vw;
+    height: 80vh;
+    display: flex;
+    // flex-direction: row-reverse;
+    // display: grid;
+    // grid-template-columns: 100%;
+    // grid-template-areas: "login";
+    box-shadow: 0 0 17px 10px rgb(0 0 0 / 30%);
+    border-radius: 20px;
+    background: white;
+    overflow: hidden;
+}
+
+.design {
+    grid-area: design;
+    width: 50%;
+
+    // display: none;
+    position: relative;
+    background: #000;
+
+    display: flex;
+    justify-content: center;
+
+    img{
+        height: 100%;
+
+    }
+}
+
+.login {
+    grid-area: login;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: white;
+}
+
+.login h3.title {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.text-input {
+    background: #e6e6e6;
+    height: 50px;
+    display: flex;
+    width: 68%;
+    align-items: center;
+    border-radius: 10px;
+    padding: 0 15px;
+    margin: 10px 0;
+}
+
+.text-input input {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+}
+
+.text-input i {
+    color: #686868;
+}
+
+::placeholder {
+    color: #9a9a9a;
+}
+
+.login-btn {
+    width: 68%;
+    height: 50px;
+    padding: 10px;
+    color: white;
+    // background: linear-gradient(to right, #ff966d, #fa538d, #89379c);
+    background: #3b82f6;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.login-btn:hover{
+    background: #282960;
+}
+
+a {
+    font-size: 12px;
+    color: #9a9a9a;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+}
+
+a.forgot {
+    margin-top: 15px;
+}
+
+
+.create {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+}
+
+.create i {
+    color: #9a9a9a;
+    margin-left: 10px;
+}
+
+
+@media screen and (max-width: 1070px){
+    .container{
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 991px){
+    .container{
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .design{
+        width: 0%;
+        display: none;
+    }
+
+    .login{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .text-input{
+        width: 78%;
+    }
+    .login-btn{
+        width: 78%;        
+    }
+}
+
+@media screen and (max-height: 420px){
+    .container{        
+        height: 90vh;
+    }
+}

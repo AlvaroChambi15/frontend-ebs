@@ -1,14 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { CargarScriptsService } from 'src/app/cargar-scripts.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  providers: [ConfirmationService, MessageService],
 })
 export class HeaderComponent implements OnInit {
+
+  menuHeader: boolean = false;
+
 
   constructor(
     private _cargarScript: CargarScriptsService,
@@ -18,6 +24,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     // this._cargarScript.carga(["menu"]);
+  }
+
+  openMenu() {
+    this.menuHeader = true;
   }
 
 

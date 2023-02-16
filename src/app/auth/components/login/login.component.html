@@ -1,4 +1,4 @@
-<h1>INGRESAR</h1>
+<!-- <h1>INGRESAR</h1>
 
 <form [formGroup]="loginForm">
 
@@ -15,3 +15,46 @@
 Value: {{ loginForm.value | json }}
 <br>
 Estado: {{ loginForm.valid }}
+
+ -->
+
+<!-- ================================================== -->
+
+<app-chargin-login *ngIf="loading"></app-chargin-login>
+
+<div class="content">
+
+  <div class="container">
+
+    <div class="design">
+      <img src="assets/img/thoth.jpg" alt="">
+    </div>
+
+    <div class="login" [formGroup]="loginForm">
+
+      <h3 class="title">LOGIN</h3>
+      <div class="text-input">
+        <i class="pi pi-user"></i>
+        <input formControlName="email" type="email" placeholder="Correo">
+      </div>
+      <div class="text-input">
+        <i class="pi pi-lock"></i>
+        <input formControlName="password" type="password" placeholder="Contraseña" (keyup.enter)="ingresar()">
+      </div>
+      <button (click)="ingresar()" type="button" [disabled]="!loginForm.valid" class="login-btn">INGRESAR</button>
+      <!-- <a href="#" class="forgot">Olvidase tu contraseña?</a> -->
+
+      <div class="create">
+        <i class="pi pi-arrow-left"></i>
+        <a routerLink="/"> Volver</a>
+      </div>
+
+      <!--       Value: {{ loginForm.value | json }}
+      <br>
+      Estado: {{ loginForm.valid }} -->
+
+    </div>
+
+  </div>
+
+</div>

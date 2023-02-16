@@ -31,6 +31,57 @@
 // ///////////////////////////////
 
 
+.menuHeader{
+    background: #e3f2fd;
+}
+
+.menuHeader .p-sidebar-content{
+    height: 100%;
+}
+
+.menuHeader .menu{
+    // background: green;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menuHeader .menu .item{
+    // background: #28d5a7;
+    padding: 15px;
+    padding-left: 40px;
+    margin: 10px 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menuHeader .menu .item:hover{
+    background: #65d2e4;
+    color: white;
+    box-shadow: 0 0 6px 0.6px #65d2e4;
+    border-radius: 40px
+}
+
+.menuHeader .menu .item4:last-child{
+    background: #ffc107;    
+    border: 2.4px solid #ffb300;
+    color: white;
+    border-radius: 40px;
+    text-align: center;
+    padding-left: 15px;
+}
+
+.menuHeader .menu .item4:hover{
+    background: #fb8c00;
+    box-shadow: 0 0 5px 0.1px #ff9800;
+}
+
+
+
+// ///////////////////////////////
+
+
 /* NEW MENU */
 
 .header-area {

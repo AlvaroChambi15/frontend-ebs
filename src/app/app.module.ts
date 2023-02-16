@@ -40,6 +40,7 @@ import { DividerModule } from 'primeng/divider';
 import { TooltipModule } from 'primeng/tooltip';
 import { DialogModule } from 'primeng/dialog';
 import { SisebsModule } from './sisebs/sisebs.module';
+import { SidebarModule } from 'primeng/sidebar';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { SisebsModule } from './sisebs/sisebs.module';
     FormsModule,
     TooltipModule,
     DialogModule,
-    SisebsModule
+    SisebsModule,
+    SidebarModule
   ],
   providers: [
     {
