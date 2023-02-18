@@ -1,6 +1,6 @@
 <header class="header-area">
 
-  <div class="header-menu-wrapper container">
+  <div class="header-menu-wrapper containerWeb">
     <nav>
       <!-- <input type="checkbox" id="check"> -->
       <label for="check" class="checkBtn">
@@ -56,16 +56,16 @@
 
 <p-sidebar styleClass="menuHeader" [(visible)]="menuHeader" position="left">
   <div class="menu">
-    <div class="item">
+    <div class="item" (click)="scroll('Inicio')">
       <span>INICIO</span>
     </div>
-    <div class="item">
+    <div class="item" (click)="scroll('Tratamientos')">
       <span>TRATAMIENTOS</span>
     </div>
-    <div class="item">
+    <div class="item" (click)="scroll('Contacto')">
       <span>CONTACTO</span>
     </div>
-    <div class="item item4">
+    <div class="item item4" (click)="scroll('Reserva')">
       <span>RESERVAR CITA</span>
     </div>
   </div>

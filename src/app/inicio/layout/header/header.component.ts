@@ -74,7 +74,12 @@ export class HeaderComponent implements OnInit {
   }
 
   scroll(part: string) {
-    this.router.navigateByUrl('#' + part);
+    this.menuHeader = false;
+    if (part == 'Inicio') {
+      this.router.navigateByUrl('/');
+    } else {
+      this.router.navigateByUrl('#' + part);
+    }
   }
 
 }

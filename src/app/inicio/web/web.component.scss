@@ -276,7 +276,7 @@
 // =====================================
 
 
-.container{
+.containerWeb{
     width: 85%;
     margin: 0 auto;
     overflow: hidden;
@@ -331,7 +331,7 @@
     position: relative;
 }
 
-.hero .container{
+.hero .containerWeb{
     padding: 0;
 }
 
@@ -857,7 +857,7 @@
     position: absolute;
 }
 
-.projects .container{
+.projects .containerWeb{
     display: flex;
     justify-content: space-evenly;
     padding-top: 90px;
@@ -888,7 +888,7 @@
     text-align: center;
 }
 
-.projects .container .textoContent{
+.projects .containerWeb .textoContent{
     text-align: center;
     display: grid;
     // width: 430px;
@@ -899,14 +899,14 @@
     padding: 0 80px 0 0;
 }
 
-.projects .container .nombreDoc{
+.projects .containerWeb .nombreDoc{
     font-family: "Agency FB", sans-serif;
     color: #000;
     font-weight: bold;
     font-size: 35px;
 }
 
-.projects .container .celularContact{
+.projects .containerWeb .celularContact{
 
     margin: 20px 0 20px 0;
 
@@ -922,14 +922,14 @@
     }
 }
 
-.projects .container .direccionContact span{
+.projects .containerWeb .direccionContact span{
 
     font-family: "Agency FB", sans-serif;
     color: #000;
     font-size: 30px;
 }
 
-.projects .container .horarioContact {
+.projects .containerWeb .horarioContact {
 
     margin-top: 15px;
 
@@ -1013,7 +1013,7 @@
     z-index: -1;
 } */
 
-.testimony .container{
+.testimony .containerWeb{
     padding: 80px 0;
 }
 
@@ -1460,7 +1460,7 @@ footer p{
         }
     }
 
-    .projects .container{
+    .projects .containerWeb{
         display: flex;
         justify-items: center;
         flex-wrap: wrap;
@@ -1468,13 +1468,13 @@ footer p{
         padding-top: 70px;
     }
 
-    .projects .container .googleMaps{
+    .projects .containerWeb .googleMaps{
         width: 100%;
         margin-top: 50px;
         height: 450px;
     }
 
-    .projects .container .textoContent{
+    .projects .containerWeb .textoContent{
         width: 100%;
         padding: 0;
     }
@@ -1693,7 +1693,7 @@ footer p{
         grid-template-columns: 1fr;
      }
 
-     .about.container{
+     .about .containerWeb{
         padding-top: 30px;
      }
 
@@ -1910,7 +1910,7 @@ footer p{
         row-gap: 60px;        
     }
 
-    .about.container{
+    .about .containerWeb{
         padding-top: 10px;
     }
 
