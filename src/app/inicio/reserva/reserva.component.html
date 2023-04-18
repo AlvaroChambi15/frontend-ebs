@@ -186,7 +186,8 @@
             Ingrese los datos de solicitud para la cita
           </ng-template>
           <div class="field">
-            <div><i class="pi pi-list" style="margin-right: 10px;"></i> <label for="fecha">Tratamiento</label></div>
+            <div><i class="pi pi-list" style="margin-right: 10px;"></i> <label for="tratamiento">Tratamiento</label>
+            </div>
             <!-- <input id="fecha" type="fecha" pInputText> -->
             <p-dropdown [options]="tratamientos" formControlName="tratamiento" placeholder="Seleccione un tratamiento"
               optionLabel="name" scrollHeight="330px" [showClear]="true">
@@ -199,11 +200,13 @@
             <div class="field">
               <div><i class="pi pi-calendar-plus" style="margin-right: 10px;"></i> <label for="fecha">Fecha</label>
               </div>
+
               <!-- <input id="fecha" type="fecha" pInputText> -->
               <!-- <p-calendar formControlName="fecha" [minDate]="minDate" [maxDate]="maxDate" [readonlyInput]="true"
                 inputId="min-max"></p-calendar> -->
-              <p-calendar formControlName="fecha" [disabledDays]="[0]" [touchUI]="true" [minDate]="manana"
-                dateFormat="mm-dd-yy" [readonlyInput]="true" inputId="touchui" styleClass="txtFecha"></p-calendar>
+              <p-calendar formControlName="fecha" [disabledDays]="[0]" [baseZIndex]="20" [touchUI]="false"
+                [minDate]="manana" dateFormat="mm-dd-yy" [readonlyInput]="true" inputId="touchui" styleClass="txtFecha">
+              </p-calendar>
               <small class="p-error" *ngIf="campoValidando('fecha')">La fecha es requerida.</small>
             </div>
             <div class="field">

@@ -1,1 +1,276 @@
-<p>lista-solicitud works!</p>
+<!-- <p>lista-solicitud works!</p> -->
+<!-- {{ solicitudes.data | json }} -->
+
+<div class="card">
+  <h2>SOLICITUDES</h2>
+
+  <!--  <table style="border:1px solid black;">
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Contacto</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+    <tr *ngFor="let solicitud of solicitudes.data">
+      <td>{{ solicitud.nombres }} {{ solicitud.apellidos }}</td>
+      <td>{{ solicitud.especialidad }}</td>
+      <td>WS TWT TEL</td>
+      <td>{{ solicitud.fecha_soli | date:'fullDate' }}</td>
+      <td>{{ solicitud.hora_soli }}</td>
+      <td>Solicitud</td>
+      <td></td>
+    </tr>
+
+  </table> -->
+
+</div>
+
+<!-- <div class="card">
+  <p-table [value]="solicitudes.data" [lazy]="true" styleClass="p-datatable-striped"
+    [tableStyle]="{'min-width': '30rem'}" responsiveLayout="scroll">
+
+    <ng-template pTemplate="caption">
+      <div class="flex">
+        <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash"></button>
+        <span class="p-input-icon-left ml-auto">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" placeholder="Search keyword" />
+        </span>
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nombres</th>
+        <th>Especialidad</th>
+        <th>Contacto</th>
+        <th>Fecha Soli.</th>
+        <th>Hora Soli.</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-solicitud>
+      <tr>
+        <td>{{solicitud.nombres}} {{ solicitud.apellidos }}</td>
+        <td>{{solicitud.especialidad}}</td>
+        <td> WS TWT TEL</td>
+        <td>{{solicitud.fecha_soli | date:'fullDate' }}</td>
+        TODO: Realizar un pipe para la hora
+        <td>{{solicitud.hora_soli  }}</td>
+        <td>Solicitud</td>
+        <td>Accion</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div> -->
+
+<div class="card">
+  <p-toolbar styleClass="mb-4 gap-2">
+    <ng-template pTemplate="left">
+      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2"></button>
+      <button pButton pRipple icon="pi pi-trash" class="p-button-danger"></button>
+      <!-- (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button> -->
+    </ng-template>
+
+    <ng-template pTemplate="right">
+      <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import"
+        class="mr-2 inline-block"></p-fileUpload>
+      <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
+    </ng-template>
+  </p-toolbar>
+
+  <p-table #dt [value]="solicitudes" [lazy]="true" (onLazyLoad)="loadSolicitudes($event)" responsiveLayout="scroll"
+    [rows]="5" [paginator]="true" [globalFilterFields]="['name','country.name','representative.name','status']"
+    [tableStyle]="{'width': '100%'}" [rowHover]="true" dataKey="id" [totalRecords]="totalRecords" [loading]="loading"
+    [rowsPerPageOptions]="[5,10,15]"
+    currentPageReportTemplate="Mostrando del {first} al {last} de {totalRecords} registros"
+    [showCurrentPageReport]="true">
+    <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">
+        <!-- <h5 class="m-0">Manage Products</h5> -->
+
+        <!-- <div class="datef">
+          <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input pInputText type="text" (keyup.enter)="dt.filterGlobal($event.target , 'contains')"
+              placeholder="Search..." />
+
+          </span>
+        </div> -->
+
+        <!-- DATE FILTER -->
+        <!-- <p-columnFilter type="date" field="date" display="menu"></p-columnFilter> -->
+
+        <!-- <div class="dateRangeFilter">
+          Range:
+          <p-columnFilter field="dateRangeFilter" matchMode="equals" [showMenu]="false">
+            <p-calendar styleClass="dateFilterSoli" [(ngModel)]="rangeDates"
+              (keyup.enter)="dt.filterGlobal($event.target , 'contains')" selectionMode="range" [readonlyInput]="true"
+              inputId="range">
+            </p-calendar>
+          </p-columnFilter>
+        </div> -->
+
+        <div class="searchFilter" style="display: grid;">
+          Buscar:
+          <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input pInputText type="text" showClearButton="true"
+              (keyup.enter)="dt.filterGlobal($event.target , 'contains')" placeholder="..." />
+            <!-- <input pInputText type="text" (keyup.enter)="dt.filterGlobal($event.target, #dt , 'contains')"
+              placeholder="Search..." /> -->
+            <!-- <input pInputText [(ngModel)]="soliLoad.searchSoli" type="text" placeholder="Search..." /> -->
+          </span>
+        </div>
+
+        <div class="estadoFilter">
+          Estado:
+          <p-columnFilter field="status" matchMode="equals" [showMenu]="false">
+            <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+              <p-dropdown [ngModel]="value" [options]="statuses" (onChange)="filter($event.value)" placeholder="Any"
+                [showClear]="true">
+                <ng-template let-option pTemplate="item">
+                  <span [class]="'customer-badge status-' + option.style">{{option.label}}</span>
+                </ng-template>
+              </p-dropdown>
+            </ng-template>
+          </p-columnFilter>
+        </div>
+
+
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <!-- <th>id</th> -->
+        <!-- <th pSortableColumn="nombres" style="width: min-content;">NOMBRES</th> -->
+        <th style="width: min-content;">NOMBRES</th>
+        <th>ESPECIALIDAD</th>
+        <th style="min-width: 161px;">FECHA <br>SOL.</th>
+        <th>HORA <br>SOL.</th>
+        <th>ESTADO</th>
+        <th>ACCIONES</th>
+      </tr>
+      <!--  <tr>
+        <th>
+
+        </th>
+        <th>
+          <p-columnFilter field="especialidad" matchMode="equals" [showMenu]="false">
+            <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+              <p-dropdown [ngModel]="value" [options]="especialidades" (onChange)="filter($event.value)"
+                placeholder="Any" [showClear]="true">
+
+                <ng-template let-option pTemplate="item">
+                  <span [class]="'customer-badge status-' + option.label">{{option.value}}</span>COMMENT
+                  <span>{{option.label}}</span>
+
+                </ng-template>
+                <span [class]="'customer-badge status-unqualified'">ÑA</span> COMENTE
+
+              </p-dropdown>
+            </ng-template>
+          </p-columnFilter>
+        </th>
+
+        <th>
+          <p-columnFilter type="date" field="date" display="menu"></p-columnFilter>
+        </th>
+
+        <th>
+
+        </th>
+        <th>
+          <p-columnFilter field="status" matchMode="equals" [showMenu]="false">
+            <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+              <p-dropdown [ngModel]="value" [options]="statuses" (onChange)="filter($event.value)" placeholder="Any"
+                [showClear]="true">
+
+                <ng-template let-option pTemplate="item">
+                  <span [class]="'customer-badge status-' + option.style">{{option.label}}</span>
+                </ng-template>
+
+              </p-dropdown>
+            </ng-template>
+          </p-columnFilter>
+        </th>
+
+        <th>
+        </th>
+      </tr> -->
+    </ng-template>
+    <ng-template pTemplate="body" let-solicitud>
+      <tr>
+        <!-- <td>{{ solicitud.id }}</td> -->
+        <!-- <td>{{solicitud.reserva.nombres}} {{ solicitud.reserva.apellidos }}</td> -->
+        <td>{{solicitud.fullname}}</td>
+
+        <!-- <td>{{ solicitud.reserva.especialidad }}</td> -->
+        <td>{{ solicitud.especialidad }}</td>
+
+        <!-- <td>{{solicitud.reserva.fecha_soli | date:"fullDate"}}</td> -->
+        <td>{{solicitud.fecha_soli | date:"fullDate"}}</td>
+
+        <!-- <td>{{solicitud.reserva.hora_soli}}</td> -->
+        <td>{{solicitud.hora_soli}}</td>
+
+        <!-- <td>{{ solicitud.estado }}</td> -->
+        <td>
+          <span [class]="'customer-badge status-new'"
+            *ngIf="solicitud.horarios[0].estado=='SOLICITUD'">{{solicitud.horarios[0].estado}}</span>
+          <span [class]="'customer-badge status-negotiation'"
+            *ngIf="solicitud.horarios[0].estado=='POR CONFIRMAR'">{{solicitud.horarios[0].estado}}</span>
+          <span [class]="'customer-badge status-unqualified'"
+            *ngIf="solicitud.horarios[0].estado=='CANCELADO'">{{solicitud.horarios[0].estado}}</span>
+        </td>
+        <td>
+          <button pButton pRipple icon="pi pi-ellipsis-h" class="p-button-rounded p-button-info mr-2"
+            (click)="openModalDetalleSoli(solicitud)"></button>
+          <!-- <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+            (click)="deleteProduct(solicitud)"></button> -->
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="flex align-items-center justify-content-between">
+        <!-- En total hay {{solicitudes.data ? solicitudes.data.length : 0 }} solicitudes. -->
+        En total hay {{ totalSolicitudes }} solicitudes.
+      </div>
+    </ng-template>
+  </p-table>
+
+
+
+</div>
+
+<!-- <div class="card">
+  <p>Showing booking {{solicitudesPagination.from}} to {{solicitudesPagination.to}} of {{solicitudesPagination.total}}
+  </p>
+  <p>Page {{solicitudesPagination.current_page}} of {{solicitudesPagination.last_page}}</p>
+  <button [disabled]="!solicitudesPagination.prev_page_url">Prev</button>
+  <button [disabled]="!solicitudesPagination.next_page_url">Next</button>
+</div> -->
+
+
+<p-dialog header="DATOS SOLICITUD" [(visible)]="modalDetalleSoli" [modal]="true" [style]="{width: '80vw'}"
+  [draggable]="false" [resizable]="false">
+  <p class="m-0">Datos de la solicitud: <br>
+
+    {{ sasa | json }}
+
+  </p>
+
+  <div class="datos">
+
+    {{ sasa.edad }}
+
+  </div>
+
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="closeModalDetalleSoli()" label="Ok" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>

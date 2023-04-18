@@ -41,7 +41,7 @@ export class AuthGuard implements CanActivate {
     // TODO: VERIFICAR SI EL TOKEN ES VALIDO, Y SI ES, DEJAR INGRESAR DE LO CONTRARIO NO  // PRUEBAAA
     try {
 
-      let token = localStorage.getItem("token");
+      let token = localStorage.getItem("session");
       if (token) {
         return true;
       }
@@ -50,12 +50,14 @@ export class AuthGuard implements CanActivate {
       //   return true;
       // }
 
-      localStorage.removeItem("token");
+      localStorage.removeItem("session");
+      localStorage.removeItem("c_user");
       this.router.navigate(["/auth/login"]);
 
     } catch (error) {
 
-      localStorage.removeItem("token");
+      localStorage.removeItem("session");
+      localStorage.removeItem("c_user");
       this.router.navigate(["/auth/login"]);
       return false;
     }

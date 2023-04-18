@@ -64,7 +64,7 @@ export class ReservaComponent implements OnInit {
     apellidos: [, [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],
     edad: [, [Validators.required]],
     email: [, [Validators.email, Validators.maxLength(80)]],
-    celular: [, [Validators.required]],
+    celular: [, [Validators.required, Validators.minLength(8)]],
     contactTelefono: [false,],
     contactWsp: [false,],
     contactEmail: [false,],

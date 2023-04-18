@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import { DesignComponent } from './design/design.component';
 import { Notfound404Component } from './errors/notfound404/notfound404.component';
+import { SinAccesoComponent } from './errors/sin-acceso/sin-acceso.component';
 import { AuthGuard } from './guards/auth.guard';
 import { PersonalComponent } from './inicio/reserva/personal/personal.component';
 import { ReservaComponent } from './inicio/reserva/reserva.component';
@@ -31,6 +32,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   { path: 'noexiste', component: Notfound404Component },
+  // { path: 'sinAcceso', component: SinAccesoComponent },
   { path: '**', redirectTo: 'noexiste' }
 ];
 

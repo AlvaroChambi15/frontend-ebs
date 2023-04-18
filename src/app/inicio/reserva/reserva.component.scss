@@ -185,8 +185,9 @@
                     }
                 }
 
-                .txtFecha{
+                .txtFecha{                    
                     display: flex;
+                    background: #fff8e0;
                 }
 
                 .txtHora{
@@ -203,6 +204,15 @@
 
 
         }
+    }
+
+    .txtFecha{
+        background: #fff8e0;        
+    }
+
+    .txtFecha .p-datepicker{
+        background: #fefbf3;        
+        z-index: 30;
     }
 
     .cardStepsConfirm{

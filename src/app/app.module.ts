@@ -41,6 +41,10 @@ import { TooltipModule } from 'primeng/tooltip';
 import { DialogModule } from 'primeng/dialog';
 import { SisebsModule } from './sisebs/sisebs.module';
 import { SidebarModule } from 'primeng/sidebar';
+import { SinAccesoComponent } from './errors/sin-acceso/sin-acceso.component';
+import { RolesItemDirective } from './directive/roles-item.directive';
+import { RoleDirective } from './directive/role.directive';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -52,7 +56,9 @@ import { SidebarModule } from 'primeng/sidebar';
     ReservaComponent,
     HeaderComponent,
     FooterComponent,
-    PersonalComponent
+    PersonalComponent,
+    SinAccesoComponent,
+    // RoleDirective
   ],
   imports: [
     BrowserModule,
@@ -76,7 +82,8 @@ import { SidebarModule } from 'primeng/sidebar';
     TooltipModule,
     DialogModule,
     SisebsModule,
-    SidebarModule
+    SidebarModule,
+    TranslateModule.forRoot()
   ],
   providers: [
     {
@@ -90,6 +97,10 @@ import { SidebarModule } from 'primeng/sidebar';
     },
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    // RolesItemDirective
+    TranslateModule
+  ]
 })
 export class AppModule { }

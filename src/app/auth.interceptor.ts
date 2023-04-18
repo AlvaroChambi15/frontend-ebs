@@ -20,11 +20,12 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
-    let token = localStorage.getItem("token");
+    let token = localStorage.getItem("session");
+    let token1 = atob(token!)
     let tokenizedReq = request.clone({
       setHeaders: {
         'Acept': 'application/json',
-        'Authorization': 'Bearer ' + token
+        'Authorization': 'Bearer ' + token1
       }
     });
 
@@ -32,15 +33,28 @@ export class AuthInterceptor implements HttpInterceptor {
 
       (error: any) => {
         console.log("ERRORRRR", error);
+        console.log(error instanceof HttpErrorResponse);
+        console.log(error.status);
+
         if (error instanceof HttpErrorResponse) {
+          // console.log(error.status);
+
           if (error.status !== 401) {
             return
           }
+
           //eliminando el token en la base de datos
           this.authService.logout()
 
-          localStorage.removeItem("token");
+          // this.router.navigate(["/noexiste"])
+
+
+          localStorage.removeItem("session");
+          localStorage.removeItem("c_user");
           this.router.navigate(["/auth/login"])
+
+
+
         }
 
       }

@@ -67,7 +67,8 @@
     background: white;
 }
 
-.login h3.title {
+.login h3.titleLogin {
+    color: #000;
     margin-bottom: 20px;
     font-weight: bold;
     font-size: 40px;
@@ -85,6 +86,7 @@
 }
 
 .text-input input {
+    color: #000;
     background: none;
     border: none;
     outline: none;

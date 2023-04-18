@@ -19,7 +19,7 @@ export class LoginGuard implements CanActivate {
 
     try {
 
-      let token = localStorage.getItem("token");
+      let token = localStorage.getItem("session");
 
       if (token) {
         this.router.navigate(["/sisebs/perfil"]);
@@ -32,7 +32,8 @@ export class LoginGuard implements CanActivate {
       // TODO: Eliminar el token de la bbdd  UMMMH
       this.authservice.logout();
 
-      localStorage.removeItem("token");
+      localStorage.removeItem("session");
+      localStorage.removeItem("c_user");
       return true;
     }
 
